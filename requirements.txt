@@ -1,3 +1,7 @@
 python-dotenv
 datasets
 huggingface-hub
+numpy
+pandas
+matplotlib
+seaborn
