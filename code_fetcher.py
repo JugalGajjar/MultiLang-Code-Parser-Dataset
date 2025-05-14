@@ -6,10 +6,14 @@ collection on Hugging Face for multiple programming languages.
 
 The script uses logging to track the download process and saves logs to a timestamped
 file in a 'logs' directory.
+
+The script can download data in parts or as a whole, useful for managing large downloads
+that may require significant storage (>= 1TB for the complete dataset).
 """
 
 import os
 import logging
+import argparse
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, Optional, List
@@ -131,6 +135,22 @@ def main():
     """
     Main function to initialize the script and download all datasets.
     """
+    # Set up the argument parser
+    parser = argparse.ArgumentParser(
+        description="StarCoder Dataset Downloader - Downloads programming language datasets from Hugging Face")
+    parser.add_argument(
+        "-d", "--download-in-parts", 
+        action="store_true",
+        help="Download data in parts instead of all at once. The complete dataset requires >= 1TB storage.")
+    parser.add_argument(
+        "-p", "--partition-num", 
+        type=int,
+        default=0,
+        choices=[1, 2, 3, 4],
+        help="Partition number (1-4) to download specific languages. Each partition contains 3 languages.")
+    
+    args = parser.parse_args()
+    
     # Set up logging
     setup_logging()
     
@@ -152,13 +172,33 @@ def main():
         "c", "cpp", "c-sharp", "go", "java", "javascript", 
         "kotlin", "python", "ruby", "rust", "scala", "typescript"
     ]
+
+    # Apply partitioning if specified
+    selected_languages = languages
+    if args.download_in_parts and args.partition_num > 0:
+        logging.info(f"Downloading partition {args.partition_num} of 4")
+        
+        if args.partition_num == 1:
+            selected_languages = languages[:3]
+        elif args.partition_num == 2:
+            selected_languages = languages[3:6]
+        elif args.partition_num == 3:
+            selected_languages = languages[6:9]
+        elif args.partition_num == 4:
+            selected_languages = languages[9:]
+        else:
+            logging.error(f"Invalid partition number {args.partition_num}. It should be a number between 1-4 (inclusive).")
+            return
     
-    # Download all language datasets
-    data_dict = download_all_languages(languages)
+    # Download selected language datasets
+    data_dict = download_all_languages(
+        selected_languages
+    )
     
     # Check if all downloads were successful
     successful_downloads = sum(1 for ds in data_dict.values() if ds is not None)
-    logging.info(f"Download process completed. Successfully downloaded {successful_downloads}/{len(languages)} datasets.")
+    logging.info(f"Download process completed. Successfully downloaded {successful_downloads}/{len(selected_languages)} datasets.")
+
 
 
 if __name__ == "__main__":
