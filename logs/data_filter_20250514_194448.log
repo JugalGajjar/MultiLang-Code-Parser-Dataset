@@ -1,0 +1,203 @@
+2025-05-14 19:44:48,963 - INFO - Logging initialized. Log file: ./logs/data_filter_20250514_194448.log
+2025-05-14 19:44:48,963 - INFO - Processing partition 2 of 4
+2025-05-14 19:44:48,963 - INFO - Number of languages currently filtering: 3
+2025-05-14 19:44:48,963 - INFO - Languages included:
+2025-05-14 19:44:48,963 - INFO -   - GO
+2025-05-14 19:44:48,963 - INFO -   - JAVA
+2025-05-14 19:44:48,963 - INFO -   - JAVASCRIPT
+2025-05-14 19:44:48,963 - INFO - Working with GO language...
+2025-05-14 19:44:52,675 - INFO -   - Successfully loaded the code data.
+2025-05-14 19:44:56,662 - INFO -   - Data shuffling completed.
+2025-05-14 19:48:05,516 - INFO -   - 'avg_line_length' feature added to the dataset.
+2025-05-14 19:48:32,240 - INFO -   - Data slicing completed.
+2025-05-14 19:48:32,241 - INFO -   - Working with data statistics and filtering based on it.
+2025-05-14 19:48:33,724 - INFO - Statistics for avg_line_length:
+count    2.500000e+06
+mean     2.426512e+01
+std      7.924835e+00
+min      1.011209e+00
+25%      1.905512e+01
+50%      2.333839e+01
+75%      2.818182e+01
+max      9.901786e+01
+Name: avg_line_length, dtype: float64
+2025-05-14 19:48:35,190 - INFO - Box plot for average line length saved to ./graphs/GO_box_plot_avg_line_length.png
+2025-05-14 19:48:35,244 - INFO - Number of outliers identified: 68620
+2025-05-14 19:48:35,244 - INFO - Dropping outliers from the dataset.
+2025-05-14 19:48:35,404 - INFO - Statistics for avg_line_length after outlier removal:
+count    2.431380e+06
+mean     2.354030e+01
+std      6.511754e+00
+min      5.368421e+00
+25%      1.892857e+01
+50%      2.311215e+01
+75%      2.769167e+01
+max      4.187179e+01
+Name: avg_line_length, dtype: float64
+2025-05-14 19:48:48,103 - INFO - 'line_count' feature added to the dataset.
+2025-05-14 19:48:48,132 - INFO - Statistics for line_count:
+count    2.431380e+06
+mean     1.697594e+02
+std      6.916374e+02
+min      1.000000e+00
+25%      3.700000e+01
+50%      7.600000e+01
+75%      1.570000e+02
+max      1.140890e+05
+Name: line_count, dtype: float64
+2025-05-14 19:48:48,407 - INFO - Distribution of code lengths saved to ./graphs/GO_distribution_of_code_lengths.png
+2025-05-14 19:48:48,561 - INFO - Statistics comparison for 'avg_line_length' and 'line_count' before and after filtering:
+2025-05-14 19:48:48,629 - INFO - BEFORE: 
+       avg_line_length    line_count
+count     2.431380e+06  2.431380e+06
+mean      2.354030e+01  1.697594e+02
+std       6.511754e+00  6.916374e+02
+min       5.368421e+00  1.000000e+00
+25%       1.892857e+01  3.700000e+01
+50%       2.311215e+01  7.600000e+01
+75%       2.769167e+01  1.570000e+02
+max       4.187179e+01  1.140890e+05
+2025-05-14 19:48:48,684 - INFO - AFTER: 
+       avg_line_length    line_count
+count     1.750873e+06  1.750873e+06
+mean      2.067884e+01  8.175667e+01
+std       4.495117e+00  6.685615e+01
+min       5.368421e+00  1.000000e+00
+25%       1.756774e+01  3.100000e+01
+50%       2.100000e+01  6.100000e+01
+75%       2.423881e+01  1.130000e+02
+max       2.834783e+01  3.070000e+02
+2025-05-14 19:49:07,162 - INFO -   - Data filtered successfully.
+2025-05-14 19:49:07,163 - INFO -   - Writing filtered data to disk.
+2025-05-14 19:49:17,868 - INFO -   - Data successfully saved at ./filtered_data/go.json.
+2025-05-14 19:49:17,868 - INFO - Working with JAVA language...
+2025-05-14 19:49:32,206 - INFO -   - Successfully loaded the code data.
+2025-05-14 19:49:51,945 - INFO -   - Data shuffling completed.
+2025-05-14 20:39:51,117 - INFO -   - 'avg_line_length' feature added to the dataset.
+2025-05-14 20:40:18,799 - INFO -   - Data slicing completed.
+2025-05-14 20:40:18,800 - INFO -   - Working with data statistics and filtering based on it.
+2025-05-14 20:40:20,804 - INFO - Statistics for avg_line_length:
+count    2.500000e+06
+mean     2.934278e+01
+std      8.875824e+00
+min      6.688596e-01
+25%      2.301429e+01
+50%      2.890909e+01
+75%      3.482051e+01
+max      1.255000e+02
+Name: avg_line_length, dtype: float64
+2025-05-14 20:40:22,083 - INFO - Box plot for average line length saved to ./graphs/JAVA_box_plot_avg_line_length.png
+2025-05-14 20:40:22,123 - INFO - Number of outliers identified: 29730
+2025-05-14 20:40:22,124 - INFO - Dropping outliers from the dataset.
+2025-05-14 20:40:22,273 - INFO - Statistics for avg_line_length after outlier removal:
+count    2.470270e+06
+mean     2.897362e+01
+std      8.192548e+00
+min      5.307692e+00
+25%      2.294118e+01
+50%      2.877778e+01
+75%      3.457861e+01
+max      5.252941e+01
+Name: avg_line_length, dtype: float64
+2025-05-14 20:40:33,051 - INFO - 'line_count' feature added to the dataset.
+2025-05-14 20:40:33,080 - INFO - Statistics for line_count:
+count    2.470270e+06
+mean     1.224417e+02
+std      3.356672e+02
+min      1.000000e+00
+25%      3.100000e+01
+50%      6.300000e+01
+75%      1.250000e+02
+max      9.857800e+04
+Name: line_count, dtype: float64
+2025-05-14 20:40:33,267 - INFO - Distribution of code lengths saved to ./graphs/JAVA_distribution_of_code_lengths.png
+2025-05-14 20:40:33,460 - INFO - Statistics comparison for 'avg_line_length' and 'line_count' before and after filtering:
+2025-05-14 20:40:33,536 - INFO - BEFORE: 
+       avg_line_length    line_count
+count     2.470270e+06  2.470270e+06
+mean      2.897362e+01  1.224417e+02
+std       8.192548e+00  3.356672e+02
+min       5.307692e+00  1.000000e+00
+25%       2.294118e+01  3.100000e+01
+50%       2.877778e+01  6.300000e+01
+75%       3.457861e+01  1.250000e+02
+max       5.252941e+01  9.857800e+04
+2025-05-14 20:40:33,588 - INFO - AFTER: 
+       avg_line_length    line_count
+count     1.778689e+06  1.778689e+06
+mean      2.547740e+01  6.456047e+01
+std       5.890070e+00  5.199863e+01
+min       5.307692e+00  1.000000e+00
+25%       2.112500e+01  2.500000e+01
+50%       2.594764e+01  4.800000e+01
+75%       3.030534e+01  8.800000e+01
+max       3.527397e+01  2.450000e+02
+2025-05-14 20:40:52,842 - INFO -   - Data filtered successfully.
+2025-05-14 20:40:52,843 - INFO -   - Writing filtered data to disk.
+2025-05-14 20:41:03,082 - INFO -   - Data successfully saved at ./filtered_data/java.json.
+2025-05-14 20:41:03,082 - INFO - Working with JAVASCRIPT language...
+2025-05-14 20:41:14,656 - INFO -   - Successfully loaded the code data.
+2025-05-14 20:41:34,109 - INFO -   - Data shuffling completed.
+2025-05-14 21:22:21,006 - INFO -   - 'avg_line_length' feature added to the dataset.
+2025-05-14 21:22:43,227 - INFO -   - Data slicing completed.
+2025-05-14 21:22:43,228 - INFO -   - Working with data statistics and filtering based on it.
+2025-05-14 21:22:44,675 - INFO - Statistics for avg_line_length:
+count    2.500000e+06
+mean     2.791099e+01
+std      1.035415e+01
+min      6.791667e-01
+25%      2.164706e+01
+50%      2.612121e+01
+75%      3.160484e+01
+max      2.675000e+02
+Name: avg_line_length, dtype: float64
+2025-05-14 21:22:45,896 - INFO - Box plot for average line length saved to ./graphs/JAVASCRIPT_box_plot_avg_line_length.png
+2025-05-14 21:22:45,948 - INFO - Number of outliers identified: 113879
+2025-05-14 21:22:45,948 - INFO - Dropping outliers from the dataset.
+2025-05-14 21:22:46,080 - INFO - Statistics for avg_line_length after outlier removal:
+count    2.386121e+06
+mean     2.635471e+01
+std      7.002617e+00
+min      6.711111e+00
+25%      2.142857e+01
+50%      2.572581e+01
+75%      3.066667e+01
+max      4.654140e+01
+Name: avg_line_length, dtype: float64
+2025-05-14 21:22:55,008 - INFO - 'line_count' feature added to the dataset.
+2025-05-14 21:22:55,042 - INFO - Statistics for line_count:
+count    2.386121e+06
+mean     1.077181e+02
+std      4.806065e+02
+min      1.000000e+00
+25%      2.000000e+01
+50%      4.400000e+01
+75%      9.800000e+01
+max      9.877800e+04
+Name: line_count, dtype: float64
+2025-05-14 21:22:55,298 - INFO - Distribution of code lengths saved to ./graphs/JAVASCRIPT_distribution_of_code_lengths.png
+2025-05-14 21:22:55,454 - INFO - Statistics comparison for 'avg_line_length' and 'line_count' before and after filtering:
+2025-05-14 21:22:55,530 - INFO - BEFORE: 
+       avg_line_length    line_count
+count     2.386121e+06  2.386121e+06
+mean      2.635471e+01  1.077181e+02
+std       7.002617e+00  4.806065e+02
+min       6.711111e+00  1.000000e+00
+25%       2.142857e+01  2.000000e+01
+50%       2.572581e+01  4.400000e+01
+75%       3.066667e+01  9.800000e+01
+max       4.654140e+01  9.877800e+04
+2025-05-14 21:22:55,585 - INFO - AFTER: 
+       avg_line_length    line_count
+count     1.719140e+06  1.719140e+06
+mean      2.330948e+01  5.129171e+01
+std       4.705807e+00  4.498070e+01
+min       6.711111e+00  1.000000e+00
+25%       2.008333e+01  1.800000e+01
+50%       2.364000e+01  3.600000e+01
+75%       2.698182e+01  7.100000e+01
+max       3.149057e+01  2.070000e+02
+2025-05-14 21:23:15,092 - INFO -   - Data filtered successfully.
+2025-05-14 21:23:15,093 - INFO -   - Writing filtered data to disk.
+2025-05-14 21:23:23,307 - INFO -   - Data successfully saved at ./filtered_data/javascript.json.
+2025-05-14 21:23:24,295 - INFO - Filter process completed. Successfully filtered 3/3 datasets.
