@@ -46,7 +46,7 @@ def setup_logging(log_dir: str = "./logs") -> None:
     # Configure logging
     logging.basicConfig(
         level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s',
+        format="%(asctime)s - %(levelname)s - %(message)s",
         handlers=[
             logging.FileHandler(log_file),
             logging.StreamHandler()  # Also output to console
@@ -56,7 +56,7 @@ def setup_logging(log_dir: str = "./logs") -> None:
     logging.info(f"Logging initialized. Log file: {log_file}")
 
 
-def save_json(save_path: str, data: Dict) -> None:
+def save_json(save_path: str, data: Dict) -> bool:
     """
     Save dictionary data to a JSON file.
     
@@ -64,14 +64,19 @@ def save_json(save_path: str, data: Dict) -> None:
         save_path: Path where the JSON file will be saved
         data: Dictionary containing data to be saved
         
+    Returns:
+        Boolean indicating whether the save operation was successful
+        
     Raises:
         Logs any errors encountered during the save operation
     """
     try:
         with open(save_path, "w") as f:
             json.dump(data, f)
+        return True
     except Exception as e:
         logging.error(f"Error saving JSON file: {e}")
+        return False
 
 
 def shuffle_data(dataset: Dataset, seed: int = 42) -> Dataset:
@@ -172,7 +177,7 @@ def log_statistics_and_filter(
     logging.info(f"Statistics for avg_line_length after outlier removal:\n{new_avg_line_length_stats}")
     
     # Add line count feature to the dataset
-    df["line_count"] = df["content"].apply(lambda x: len(x.split('\n')))
+    df["line_count"] = df["content"].apply(lambda x: len(x.split("\n")))
     logging.info("'line_count' feature added to the dataset.")
     
     # Calculate and log statistics for line count
@@ -226,16 +231,17 @@ def log_statistics_and_filter(
     logging.info(f"Distribution of code lengths saved to {dist_plot_path}")
     
     # Filter the dataset by removing unnecessary columns and filtering by thresholds
-    df_filtered = df.drop(columns=["max_stars_repo_path", "max_stars_repo_name", 
-                                   "max_stars_count", "id"], errors="ignore")
+    columns_to_drop = [col for col in ["max_stars_repo_path", "max_stars_repo_name", 
+                                    "max_stars_count", "id"] if col in df.columns]
+    df_filtered = df.drop(columns=columns_to_drop)
     
     df_filtered = df_filtered[df_filtered["line_count"] <= np.percentile(df_filtered["line_count"], 90)]
     df_filtered = df_filtered[df_filtered["avg_line_length"] <= np.percentile(df_filtered["avg_line_length"], 80)]
     
     # Log comparison of statistics before and after filtering
     logging.info("Statistics comparison for 'avg_line_length' and 'line_count' before and after filtering:")
-    logging.info(f"BEFORE: \n{df[["avg_line_length", "line_count"]].describe()}")
-    logging.info(f"AFTER: \n{df_filtered[["avg_line_length", "line_count"]].describe()}")
+    logging.info(f"BEFORE: \n{df[['avg_line_length', 'line_count']].describe()}")
+    logging.info(f"AFTER: \n{df_filtered[['avg_line_length', 'line_count']].describe()}")
     
     # Create final data dictionary with unique IDs
     final_data = {}
@@ -294,7 +300,6 @@ def load_code_data(
             ds = ds.map(calculate_avg_line_length)
             logging.info("  - 'avg_line_length' feature added to the dataset.")
             
-            # Limit dataset size to prevent memory issues
             ds = ds[:2500000]  # Take first 2.5M samples
             logging.info("  - Data slicing completed.")
             
@@ -306,11 +311,15 @@ def load_code_data(
             # Save filtered data to disk
             logging.info("  - Writing filtered data to disk.")
             save_path = f"{save_directory}/{lang}.json"
-            save_json(save_path, filtered_data)
-            logging.info(f"  - Data successfully saved at {save_path}.")
+            save_success = save_json(save_path, filtered_data)
             
-            # Mark as successful
-            success_status[lang] = True
+            if save_success:
+                logging.info(f"  - Data successfully saved at {save_path}.")
+                # Mark as successful
+                success_status[lang] = True
+            else:
+                logging.error(f"  - Failed to save data at {save_path}.")
+                success_status[lang] = False
             
         except Exception as e:
             logging.error(f"Error processing {lang} dataset: {e}")
