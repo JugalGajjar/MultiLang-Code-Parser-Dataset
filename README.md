@@ -1,7 +1,7 @@
 # MultiLang Code Parser Dataset (MLCPD)
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
+[![Python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/downloads/)
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Dataset-blue)](https://huggingface.co/datasets/jugalgajjar/Filtered-StarCoder-Dataset-Mini)
 
 A comprehensive multi-language code dataset that will be processed into a parsing benchmark for language-agnostic AI code parsers.
