@@ -132,6 +132,6 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## Acknowledgments
 
-- [StarCoder Dataset](https://github.com/bigcode-project/starcoder) for source code samples
+- [StarCoder Dataset](https://huggingface.co/datasets/bigcode/starcoderdata) for source code samples
 - [TreeSitter](https://tree-sitter.github.io/tree-sitter/) for future parsing work
-- Hugging Face for dataset hosting
+- [Hugging Face](https://huggingface.co/) for dataset hosting
