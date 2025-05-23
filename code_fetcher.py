@@ -146,8 +146,8 @@ def main():
         "-p", "--partition-num", 
         type=int,
         default=0,
-        choices=[1, 2, 3, 4],
-        help="Partition number (1-4) to download specific languages. Each partition contains 3 languages.")
+        choices=[1, 2, 3, 4, 5],
+        help="Partition number (1-5) to download specific languages. Each partition contains 2 languages.")
     
     args = parser.parse_args()
     
@@ -170,24 +170,26 @@ def main():
     # Define the programming languages to download
     languages = [
         "c", "cpp", "c-sharp", "go", "java", "javascript", 
-        "kotlin", "python", "ruby", "rust", "scala", "typescript"
+        "python", "ruby", "scala", "typescript"
     ]
 
     # Apply partitioning if specified
     selected_languages = languages
     if args.download_in_parts and args.partition_num > 0:
-        logging.info(f"Downloading partition {args.partition_num} of 4")
+        logging.info(f"Downloading partition {args.partition_num} of 5")
         
         if args.partition_num == 1:
-            selected_languages = languages[:3]
+            selected_languages = languages[:2]
         elif args.partition_num == 2:
-            selected_languages = languages[3:6]
+            selected_languages = languages[2:4]
         elif args.partition_num == 3:
-            selected_languages = languages[6:9]
+            selected_languages = languages[4:6]
         elif args.partition_num == 4:
-            selected_languages = languages[9:]
+            selected_languages = languages[6:8]
+        elif args.partition_num == 5:
+            selected_languages = languages[8:]
         else:
-            logging.error(f"Invalid partition number {args.partition_num}. It should be a number between 1-4 (inclusive).")
+            logging.error(f"Invalid partition number {args.partition_num}. It should be a number between 1-5 (inclusive).")
             return
     
     # Download selected language datasets
