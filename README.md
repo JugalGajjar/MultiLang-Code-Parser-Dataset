@@ -14,25 +14,23 @@ This is the first phase of the MLCPD project - a cleaned and filtered version of
 
 - **Cleaned and Filtered Code**: Samples have been processed to remove outliers in terms of line length and code size
 - **Quality Metrics**: Each sample includes metadata about average line length and line count
-- **Multi-language Support**: 12 programming languages represented in separate subsets
+- **Multi-language Support**: 10 programming languages represented in separate subsets
 - **Consistent Format**: All samples follow the same Parquet structure for easy processing
 
 ## Dataset Statistics (Current)
 
 | Language   | Sample Count | Avg. Line Length | Avg. Line Count |
 |------------|--------------|------------------|-----------------|
-| C          | 1,751,894    | 22.55            | 74.48           |
-| C++        | 1,769,514    | 23.50            | 103.59          |
-| C#         | 1,762,960    | 25.76            | 51.50           |
-| Go         | 1,750,873    | 20.68            | 81.76           |
-| Java       | 1,778,689    | 25.48            | 64.56           |
-| JavaScript | 1,719,140    | 23.31            | 51.29           |
-| Kotlin     | 1,589,735    | 27.39            | 42.31           |
-| Python     | 1,764,481    | 26.52            | 66.15           |
-| Ruby       | 1,758,558    | 22.31            | 33.95           |
-| Rust       | 1,341,806    | 27.36            | 190.37          |
-| Scala      | 1,322,906    | 31.48            | 94.89           |
-| TypeScript | 1,738,950    | 24.15            | 43.46           |
+| C          | 1,752,078    | 22.54           | 74.52            |
+| C++        | 1,769,333    | 23.51           | 103.56           |
+| C#         | 1,763,508    | 25.77           | 51.53            |
+| Go         | 1,751,120    | 20.68           | 81.79            |
+| Java       | 1,779,659    | 25.48           | 64.59            |
+| JavaScript | 1,718,133    | 23.30           | 51.22            |
+| Python     | 1,764,099    | 26.51           | 66.16            |
+| Ruby       | 1,756,771    | 22.31           | 33.86            |
+| Scala      | 952,890      | 28.31           | 53.92            |
+| TypeScript | 1,738,885    | 24.14           | 43.39            |
 
 ## Future Vision: Full MLCPD
 
