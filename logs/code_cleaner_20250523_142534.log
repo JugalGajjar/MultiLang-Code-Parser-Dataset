@@ -1,0 +1,180 @@
+2025-05-23 14:25:34,519 - root - INFO - setup_logging:42 - Logging initialized. Log file: ./logs/code_cleaner_20250523_142534.log
+2025-05-23 14:25:34,519 - __main__ - INFO - create_output_directory:57 - Output directory ensured: ./filtered_data_parquet
+2025-05-23 14:25:34,519 - __main__ - INFO - main:402 - Starting batch processing for 10 languages
+2025-05-23 14:25:34,519 - __main__ - INFO - process_single_language:364 - Starting processing pipeline for c
+2025-05-23 14:25:34,519 - __main__ - INFO - load_parquet_data:86 - Loading data from ./filtered_data_parquet/c.parquet.
+2025-05-23 14:25:36,454 - __main__ - INFO - load_parquet_data:90 - Successfully loaded 1752078 rows from ./filtered_data_parquet/c.parquet.
+2025-05-23 14:25:36,454 - __main__ - INFO - filter_data:293 - Filtering data for c.
+2025-05-23 14:25:37,687 - __main__ - INFO - filter_data:306 - Number of rows in 'code' column containing any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']: 0
+2025-05-23 14:25:37,687 - __main__ - INFO - filter_data:313 - No rows in 'code' column contain any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']. No rows dropped.
+2025-05-23 14:25:38,492 - __main__ - INFO - filter_data:318 - Number of rows in 'code' column containing any of ['<reponame>', '<gh_stars>', '<filename>']: 845588
+2025-05-23 14:25:38,492 - __main__ - INFO - filter_data:321 - Number of rows in 'code' column before cleaning phase 1: 1752078
+2025-05-23 14:25:50,471 - __main__ - INFO - remove_lines_with_substrings:245 - Column 'code' has been modified to remove lines containing ['<reponame>', '<gh_stars>', '<filename>'].
+2025-05-23 14:25:50,480 - __main__ - INFO - filter_data:323 - Number of rows in 'code' column after cleaning phase 1: 1752078
+2025-05-23 14:25:51,577 - __main__ - INFO - filter_data:329 - Number of rows in 'code' column containing any of ['<|endoftext|>']: 1
+2025-05-23 14:25:51,577 - __main__ - INFO - filter_data:332 - Number of rows in 'code' column before cleaning phase 2: 1752078
+2025-05-23 14:25:52,639 - __main__ - INFO - replace_substring:277 - Replaced all occurrences of '<|endoftext|>' with '' in column 'code'.
+2025-05-23 14:25:52,655 - __main__ - INFO - filter_data:334 - Number of rows in 'code' column after cleaning phase 2: 1752078
+2025-05-23 14:25:52,655 - __main__ - INFO - filter_data:344 - Filtering completed for c: 1752078 -> 1752078 rows (0 removed, 0.0%)
+2025-05-23 14:25:52,655 - __main__ - INFO - save_parquet_data:117 - Saving 1752078 rows to ./filtered_data_parquet/c.parquet.
+2025-05-23 14:25:57,936 - __main__ - INFO - save_parquet_data:121 - Data saved successfully to ./filtered_data_parquet/c.parquet.
+2025-05-23 14:25:57,936 - __main__ - INFO - process_single_language:375 - Successfully completed processing for c
+2025-05-23 14:25:58,013 - __main__ - INFO - process_single_language:364 - Starting processing pipeline for cpp
+2025-05-23 14:25:58,013 - __main__ - INFO - load_parquet_data:86 - Loading data from ./filtered_data_parquet/cpp.parquet.
+2025-05-23 14:26:01,569 - __main__ - INFO - load_parquet_data:90 - Successfully loaded 1769333 rows from ./filtered_data_parquet/cpp.parquet.
+2025-05-23 14:26:01,569 - __main__ - INFO - filter_data:293 - Filtering data for cpp.
+2025-05-23 14:26:04,167 - __main__ - INFO - filter_data:306 - Number of rows in 'code' column containing any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']: 0
+2025-05-23 14:26:04,167 - __main__ - INFO - filter_data:313 - No rows in 'code' column contain any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']. No rows dropped.
+2025-05-23 14:26:05,312 - __main__ - INFO - filter_data:318 - Number of rows in 'code' column containing any of ['<reponame>', '<gh_stars>', '<filename>']: 860024
+2025-05-23 14:26:05,312 - __main__ - INFO - filter_data:321 - Number of rows in 'code' column before cleaning phase 1: 1769333
+2025-05-23 14:26:22,470 - __main__ - INFO - remove_lines_with_substrings:245 - Column 'code' has been modified to remove lines containing ['<reponame>', '<gh_stars>', '<filename>'].
+2025-05-23 14:26:22,481 - __main__ - INFO - filter_data:323 - Number of rows in 'code' column after cleaning phase 1: 1769333
+2025-05-23 14:26:24,030 - __main__ - INFO - filter_data:329 - Number of rows in 'code' column containing any of ['<|endoftext|>']: 0
+2025-05-23 14:26:24,030 - __main__ - INFO - filter_data:336 - No rows in 'code' column contain any of ['<|endoftext|>']. No modifications done.
+2025-05-23 14:26:24,030 - __main__ - INFO - filter_data:344 - Filtering completed for cpp: 1769333 -> 1769333 rows (0 removed, 0.0%)
+2025-05-23 14:26:24,030 - __main__ - INFO - save_parquet_data:117 - Saving 1769333 rows to ./filtered_data_parquet/cpp.parquet.
+2025-05-23 14:26:31,547 - __main__ - INFO - save_parquet_data:121 - Data saved successfully to ./filtered_data_parquet/cpp.parquet.
+2025-05-23 14:26:31,548 - __main__ - INFO - process_single_language:375 - Successfully completed processing for cpp
+2025-05-23 14:26:31,640 - __main__ - INFO - process_single_language:364 - Starting processing pipeline for c-sharp
+2025-05-23 14:26:31,640 - __main__ - INFO - load_parquet_data:86 - Loading data from ./filtered_data_parquet/c-sharp.parquet.
+2025-05-23 14:26:34,987 - __main__ - INFO - load_parquet_data:90 - Successfully loaded 1763508 rows from ./filtered_data_parquet/c-sharp.parquet.
+2025-05-23 14:26:34,988 - __main__ - INFO - filter_data:293 - Filtering data for c-sharp.
+2025-05-23 14:26:36,645 - __main__ - INFO - filter_data:306 - Number of rows in 'code' column containing any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']: 0
+2025-05-23 14:26:36,645 - __main__ - INFO - filter_data:313 - No rows in 'code' column contain any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']. No rows dropped.
+2025-05-23 14:26:37,429 - __main__ - INFO - filter_data:318 - Number of rows in 'code' column containing any of ['<reponame>', '<gh_stars>', '<filename>']: 851255
+2025-05-23 14:26:37,429 - __main__ - INFO - filter_data:321 - Number of rows in 'code' column before cleaning phase 1: 1763508
+2025-05-23 14:26:47,361 - __main__ - INFO - remove_lines_with_substrings:245 - Column 'code' has been modified to remove lines containing ['<reponame>', '<gh_stars>', '<filename>'].
+2025-05-23 14:26:47,370 - __main__ - INFO - filter_data:323 - Number of rows in 'code' column after cleaning phase 1: 1763508
+2025-05-23 14:26:48,344 - __main__ - INFO - filter_data:329 - Number of rows in 'code' column containing any of ['<|endoftext|>']: 0
+2025-05-23 14:26:48,345 - __main__ - INFO - filter_data:336 - No rows in 'code' column contain any of ['<|endoftext|>']. No modifications done.
+2025-05-23 14:26:48,345 - __main__ - INFO - filter_data:344 - Filtering completed for c-sharp: 1763508 -> 1763508 rows (0 removed, 0.0%)
+2025-05-23 14:26:48,345 - __main__ - INFO - save_parquet_data:117 - Saving 1763508 rows to ./filtered_data_parquet/c-sharp.parquet.
+2025-05-23 14:26:53,103 - __main__ - INFO - save_parquet_data:121 - Data saved successfully to ./filtered_data_parquet/c-sharp.parquet.
+2025-05-23 14:26:53,103 - __main__ - INFO - process_single_language:375 - Successfully completed processing for c-sharp
+2025-05-23 14:26:53,284 - __main__ - INFO - process_single_language:364 - Starting processing pipeline for go
+2025-05-23 14:26:53,285 - __main__ - INFO - load_parquet_data:86 - Loading data from ./filtered_data_parquet/go.parquet.
+2025-05-23 14:26:57,915 - __main__ - INFO - load_parquet_data:90 - Successfully loaded 1751120 rows from ./filtered_data_parquet/go.parquet.
+2025-05-23 14:26:57,915 - __main__ - INFO - filter_data:293 - Filtering data for go.
+2025-05-23 14:26:59,251 - __main__ - INFO - filter_data:306 - Number of rows in 'code' column containing any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']: 0
+2025-05-23 14:26:59,251 - __main__ - INFO - filter_data:313 - No rows in 'code' column contain any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']. No rows dropped.
+2025-05-23 14:27:00,043 - __main__ - INFO - filter_data:318 - Number of rows in 'code' column containing any of ['<reponame>', '<gh_stars>', '<filename>']: 852162
+2025-05-23 14:27:00,043 - __main__ - INFO - filter_data:321 - Number of rows in 'code' column before cleaning phase 1: 1751120
+2025-05-23 14:27:13,124 - __main__ - INFO - remove_lines_with_substrings:245 - Column 'code' has been modified to remove lines containing ['<reponame>', '<gh_stars>', '<filename>'].
+2025-05-23 14:27:13,134 - __main__ - INFO - filter_data:323 - Number of rows in 'code' column after cleaning phase 1: 1751120
+2025-05-23 14:27:14,213 - __main__ - INFO - filter_data:329 - Number of rows in 'code' column containing any of ['<|endoftext|>']: 1
+2025-05-23 14:27:14,213 - __main__ - INFO - filter_data:332 - Number of rows in 'code' column before cleaning phase 2: 1751120
+2025-05-23 14:27:15,312 - __main__ - INFO - replace_substring:277 - Replaced all occurrences of '<|endoftext|>' with '' in column 'code'.
+2025-05-23 14:27:15,329 - __main__ - INFO - filter_data:334 - Number of rows in 'code' column after cleaning phase 2: 1751120
+2025-05-23 14:27:15,329 - __main__ - INFO - filter_data:344 - Filtering completed for go: 1751120 -> 1751120 rows (0 removed, 0.0%)
+2025-05-23 14:27:15,329 - __main__ - INFO - save_parquet_data:117 - Saving 1751120 rows to ./filtered_data_parquet/go.parquet.
+2025-05-23 14:27:21,639 - __main__ - INFO - save_parquet_data:121 - Data saved successfully to ./filtered_data_parquet/go.parquet.
+2025-05-23 14:27:21,639 - __main__ - INFO - process_single_language:375 - Successfully completed processing for go
+2025-05-23 14:27:22,113 - __main__ - INFO - process_single_language:364 - Starting processing pipeline for java
+2025-05-23 14:27:22,113 - __main__ - INFO - load_parquet_data:86 - Loading data from ./filtered_data_parquet/java.parquet.
+2025-05-23 14:27:25,724 - __main__ - INFO - load_parquet_data:90 - Successfully loaded 1779659 rows from ./filtered_data_parquet/java.parquet.
+2025-05-23 14:27:25,724 - __main__ - INFO - filter_data:293 - Filtering data for java.
+2025-05-23 14:27:27,399 - __main__ - INFO - filter_data:306 - Number of rows in 'code' column containing any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']: 0
+2025-05-23 14:27:27,399 - __main__ - INFO - filter_data:313 - No rows in 'code' column contain any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']. No rows dropped.
+2025-05-23 14:27:28,228 - __main__ - INFO - filter_data:318 - Number of rows in 'code' column containing any of ['<reponame>', '<gh_stars>', '<filename>']: 857703
+2025-05-23 14:27:28,228 - __main__ - INFO - filter_data:321 - Number of rows in 'code' column before cleaning phase 1: 1779659
+2025-05-23 14:27:39,656 - __main__ - INFO - remove_lines_with_substrings:245 - Column 'code' has been modified to remove lines containing ['<reponame>', '<gh_stars>', '<filename>'].
+2025-05-23 14:27:39,667 - __main__ - INFO - filter_data:323 - Number of rows in 'code' column after cleaning phase 1: 1779659
+2025-05-23 14:27:40,724 - __main__ - INFO - filter_data:329 - Number of rows in 'code' column containing any of ['<|endoftext|>']: 0
+2025-05-23 14:27:40,724 - __main__ - INFO - filter_data:336 - No rows in 'code' column contain any of ['<|endoftext|>']. No modifications done.
+2025-05-23 14:27:40,724 - __main__ - INFO - filter_data:344 - Filtering completed for java: 1779659 -> 1779659 rows (0 removed, 0.0%)
+2025-05-23 14:27:40,724 - __main__ - INFO - save_parquet_data:117 - Saving 1779659 rows to ./filtered_data_parquet/java.parquet.
+2025-05-23 14:27:46,682 - __main__ - INFO - save_parquet_data:121 - Data saved successfully to ./filtered_data_parquet/java.parquet.
+2025-05-23 14:27:46,683 - __main__ - INFO - process_single_language:375 - Successfully completed processing for java
+2025-05-23 14:27:47,286 - __main__ - INFO - process_single_language:364 - Starting processing pipeline for javascript
+2025-05-23 14:27:47,286 - __main__ - INFO - load_parquet_data:86 - Loading data from ./filtered_data_parquet/javascript.parquet.
+2025-05-23 14:27:49,761 - __main__ - INFO - load_parquet_data:90 - Successfully loaded 1718133 rows from ./filtered_data_parquet/javascript.parquet.
+2025-05-23 14:27:49,762 - __main__ - INFO - filter_data:293 - Filtering data for javascript.
+2025-05-23 14:27:50,840 - __main__ - INFO - filter_data:306 - Number of rows in 'code' column containing any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']: 0
+2025-05-23 14:27:50,840 - __main__ - INFO - filter_data:313 - No rows in 'code' column contain any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']. No rows dropped.
+2025-05-23 14:27:51,514 - __main__ - INFO - filter_data:318 - Number of rows in 'code' column containing any of ['<reponame>', '<gh_stars>', '<filename>']: 834528
+2025-05-23 14:27:51,514 - __main__ - INFO - filter_data:321 - Number of rows in 'code' column before cleaning phase 1: 1718133
+2025-05-23 14:28:00,338 - __main__ - INFO - remove_lines_with_substrings:245 - Column 'code' has been modified to remove lines containing ['<reponame>', '<gh_stars>', '<filename>'].
+2025-05-23 14:28:00,346 - __main__ - INFO - filter_data:323 - Number of rows in 'code' column after cleaning phase 1: 1718133
+2025-05-23 14:28:01,193 - __main__ - INFO - filter_data:329 - Number of rows in 'code' column containing any of ['<|endoftext|>']: 1
+2025-05-23 14:28:01,193 - __main__ - INFO - filter_data:332 - Number of rows in 'code' column before cleaning phase 2: 1718133
+2025-05-23 14:28:02,012 - __main__ - INFO - replace_substring:277 - Replaced all occurrences of '<|endoftext|>' with '' in column 'code'.
+2025-05-23 14:28:02,028 - __main__ - INFO - filter_data:334 - Number of rows in 'code' column after cleaning phase 2: 1718133
+2025-05-23 14:28:02,028 - __main__ - INFO - filter_data:344 - Filtering completed for javascript: 1718133 -> 1718133 rows (0 removed, 0.0%)
+2025-05-23 14:28:02,028 - __main__ - INFO - save_parquet_data:117 - Saving 1718133 rows to ./filtered_data_parquet/javascript.parquet.
+2025-05-23 14:28:06,514 - __main__ - INFO - save_parquet_data:121 - Data saved successfully to ./filtered_data_parquet/javascript.parquet.
+2025-05-23 14:28:06,514 - __main__ - INFO - process_single_language:375 - Successfully completed processing for javascript
+2025-05-23 14:28:06,862 - __main__ - INFO - process_single_language:364 - Starting processing pipeline for python
+2025-05-23 14:28:06,862 - __main__ - INFO - load_parquet_data:86 - Loading data from ./filtered_data_parquet/python.parquet.
+2025-05-23 14:28:10,900 - __main__ - INFO - load_parquet_data:90 - Successfully loaded 1764099 rows from ./filtered_data_parquet/python.parquet.
+2025-05-23 14:28:10,900 - __main__ - INFO - filter_data:293 - Filtering data for python.
+2025-05-23 14:28:12,340 - __main__ - INFO - filter_data:306 - Number of rows in 'code' column containing any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']: 0
+2025-05-23 14:28:12,340 - __main__ - INFO - filter_data:313 - No rows in 'code' column contain any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']. No rows dropped.
+2025-05-23 14:28:13,153 - __main__ - INFO - filter_data:318 - Number of rows in 'code' column containing any of ['<reponame>', '<gh_stars>', '<filename>']: 859776
+2025-05-23 14:28:13,153 - __main__ - INFO - filter_data:321 - Number of rows in 'code' column before cleaning phase 1: 1764099
+2025-05-23 14:28:24,821 - __main__ - INFO - remove_lines_with_substrings:245 - Column 'code' has been modified to remove lines containing ['<reponame>', '<gh_stars>', '<filename>'].
+2025-05-23 14:28:24,831 - __main__ - INFO - filter_data:323 - Number of rows in 'code' column after cleaning phase 1: 1764099
+2025-05-23 14:28:25,989 - __main__ - INFO - filter_data:329 - Number of rows in 'code' column containing any of ['<|endoftext|>']: 89
+2025-05-23 14:28:25,989 - __main__ - INFO - filter_data:332 - Number of rows in 'code' column before cleaning phase 2: 1764099
+2025-05-23 14:28:27,060 - __main__ - INFO - replace_substring:277 - Replaced all occurrences of '<|endoftext|>' with '' in column 'code'.
+2025-05-23 14:28:27,077 - __main__ - INFO - filter_data:334 - Number of rows in 'code' column after cleaning phase 2: 1764099
+2025-05-23 14:28:27,077 - __main__ - INFO - filter_data:344 - Filtering completed for python: 1764099 -> 1764099 rows (0 removed, 0.0%)
+2025-05-23 14:28:27,077 - __main__ - INFO - save_parquet_data:117 - Saving 1764099 rows to ./filtered_data_parquet/python.parquet.
+2025-05-23 14:28:34,020 - __main__ - INFO - save_parquet_data:121 - Data saved successfully to ./filtered_data_parquet/python.parquet.
+2025-05-23 14:28:34,021 - __main__ - INFO - process_single_language:375 - Successfully completed processing for python
+2025-05-23 14:28:34,630 - __main__ - INFO - process_single_language:364 - Starting processing pipeline for ruby
+2025-05-23 14:28:34,631 - __main__ - INFO - load_parquet_data:86 - Loading data from ./filtered_data_parquet/ruby.parquet.
+2025-05-23 14:28:36,375 - __main__ - INFO - load_parquet_data:90 - Successfully loaded 1756771 rows from ./filtered_data_parquet/ruby.parquet.
+2025-05-23 14:28:36,376 - __main__ - INFO - filter_data:293 - Filtering data for ruby.
+2025-05-23 14:28:37,180 - __main__ - INFO - filter_data:306 - Number of rows in 'code' column containing any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']: 0
+2025-05-23 14:28:37,180 - __main__ - INFO - filter_data:313 - No rows in 'code' column contain any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']. No rows dropped.
+2025-05-23 14:28:37,736 - __main__ - INFO - filter_data:318 - Number of rows in 'code' column containing any of ['<reponame>', '<gh_stars>', '<filename>']: 850562
+2025-05-23 14:28:37,736 - __main__ - INFO - filter_data:321 - Number of rows in 'code' column before cleaning phase 1: 1756771
+2025-05-23 14:28:45,777 - __main__ - INFO - remove_lines_with_substrings:245 - Column 'code' has been modified to remove lines containing ['<reponame>', '<gh_stars>', '<filename>'].
+2025-05-23 14:28:45,789 - __main__ - INFO - filter_data:323 - Number of rows in 'code' column after cleaning phase 1: 1756771
+2025-05-23 14:28:46,445 - __main__ - INFO - filter_data:329 - Number of rows in 'code' column containing any of ['<|endoftext|>']: 1
+2025-05-23 14:28:46,445 - __main__ - INFO - filter_data:332 - Number of rows in 'code' column before cleaning phase 2: 1756771
+2025-05-23 14:28:47,105 - __main__ - INFO - replace_substring:277 - Replaced all occurrences of '<|endoftext|>' with '' in column 'code'.
+2025-05-23 14:28:47,121 - __main__ - INFO - filter_data:334 - Number of rows in 'code' column after cleaning phase 2: 1756771
+2025-05-23 14:28:47,121 - __main__ - INFO - filter_data:344 - Filtering completed for ruby: 1756771 -> 1756771 rows (0 removed, 0.0%)
+2025-05-23 14:28:47,121 - __main__ - INFO - save_parquet_data:117 - Saving 1756771 rows to ./filtered_data_parquet/ruby.parquet.
+2025-05-23 14:30:59,312 - __main__ - INFO - save_parquet_data:121 - Data saved successfully to ./filtered_data_parquet/ruby.parquet.
+2025-05-23 14:30:59,313 - __main__ - INFO - process_single_language:375 - Successfully completed processing for ruby
+2025-05-23 14:30:59,686 - __main__ - INFO - process_single_language:364 - Starting processing pipeline for scala
+2025-05-23 14:30:59,686 - __main__ - INFO - load_parquet_data:86 - Loading data from ./filtered_data_parquet/scala.parquet.
+2025-05-23 14:31:00,908 - __main__ - INFO - load_parquet_data:90 - Successfully loaded 952890 rows from ./filtered_data_parquet/scala.parquet.
+2025-05-23 14:31:00,908 - __main__ - INFO - filter_data:293 - Filtering data for scala.
+2025-05-23 14:31:01,474 - __main__ - INFO - filter_data:306 - Number of rows in 'code' column containing any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']: 0
+2025-05-23 14:31:01,474 - __main__ - INFO - filter_data:313 - No rows in 'code' column contain any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']. No rows dropped.
+2025-05-23 14:31:01,873 - __main__ - INFO - filter_data:318 - Number of rows in 'code' column containing any of ['<reponame>', '<gh_stars>', '<filename>']: 457482
+2025-05-23 14:31:01,873 - __main__ - INFO - filter_data:321 - Number of rows in 'code' column before cleaning phase 1: 952890
+2025-05-23 14:31:06,987 - __main__ - INFO - remove_lines_with_substrings:245 - Column 'code' has been modified to remove lines containing ['<reponame>', '<gh_stars>', '<filename>'].
+2025-05-23 14:31:06,992 - __main__ - INFO - filter_data:323 - Number of rows in 'code' column after cleaning phase 1: 952890
+2025-05-23 14:31:07,538 - __main__ - INFO - filter_data:329 - Number of rows in 'code' column containing any of ['<|endoftext|>']: 1
+2025-05-23 14:31:07,538 - __main__ - INFO - filter_data:332 - Number of rows in 'code' column before cleaning phase 2: 952890
+2025-05-23 14:31:08,074 - __main__ - INFO - replace_substring:277 - Replaced all occurrences of '<|endoftext|>' with '' in column 'code'.
+2025-05-23 14:31:08,084 - __main__ - INFO - filter_data:334 - Number of rows in 'code' column after cleaning phase 2: 952890
+2025-05-23 14:31:08,084 - __main__ - INFO - filter_data:344 - Filtering completed for scala: 952890 -> 952890 rows (0 removed, 0.0%)
+2025-05-23 14:31:08,084 - __main__ - INFO - save_parquet_data:117 - Saving 952890 rows to ./filtered_data_parquet/scala.parquet.
+2025-05-23 14:31:10,413 - __main__ - INFO - save_parquet_data:121 - Data saved successfully to ./filtered_data_parquet/scala.parquet.
+2025-05-23 14:31:10,414 - __main__ - INFO - process_single_language:375 - Successfully completed processing for scala
+2025-05-23 14:31:10,427 - __main__ - INFO - process_single_language:364 - Starting processing pipeline for typescript
+2025-05-23 14:31:10,427 - __main__ - INFO - load_parquet_data:86 - Loading data from ./filtered_data_parquet/typescript.parquet.
+2025-05-23 14:31:11,874 - __main__ - INFO - load_parquet_data:90 - Successfully loaded 1738885 rows from ./filtered_data_parquet/typescript.parquet.
+2025-05-23 14:31:11,874 - __main__ - INFO - filter_data:293 - Filtering data for typescript.
+2025-05-23 14:31:12,808 - __main__ - INFO - filter_data:306 - Number of rows in 'code' column containing any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']: 0
+2025-05-23 14:31:12,808 - __main__ - INFO - filter_data:313 - No rows in 'code' column contain any of ['<issue_start>', '<issue_comment>', '<issue_closed>', '<jupyter_start>', '<jupyter_text>', '<jupyter_code>', '<jupyter_output>', '<commit_before>', '<commit_msg>', '<commit_after>']. No rows dropped.
+2025-05-23 14:31:13,470 - __main__ - INFO - filter_data:318 - Number of rows in 'code' column containing any of ['<reponame>', '<gh_stars>', '<filename>']: 839985
+2025-05-23 14:31:13,470 - __main__ - INFO - filter_data:321 - Number of rows in 'code' column before cleaning phase 1: 1738885
+2025-05-23 14:31:21,120 - __main__ - INFO - remove_lines_with_substrings:245 - Column 'code' has been modified to remove lines containing ['<reponame>', '<gh_stars>', '<filename>'].
+2025-05-23 14:31:21,129 - __main__ - INFO - filter_data:323 - Number of rows in 'code' column after cleaning phase 1: 1738885
+2025-05-23 14:31:21,931 - __main__ - INFO - filter_data:329 - Number of rows in 'code' column containing any of ['<|endoftext|>']: 1
+2025-05-23 14:31:21,931 - __main__ - INFO - filter_data:332 - Number of rows in 'code' column before cleaning phase 2: 1738885
+2025-05-23 14:31:22,708 - __main__ - INFO - replace_substring:277 - Replaced all occurrences of '<|endoftext|>' with '' in column 'code'.
+2025-05-23 14:31:22,724 - __main__ - INFO - filter_data:334 - Number of rows in 'code' column after cleaning phase 2: 1738885
+2025-05-23 14:31:22,724 - __main__ - INFO - filter_data:344 - Filtering completed for typescript: 1738885 -> 1738885 rows (0 removed, 0.0%)
+2025-05-23 14:31:22,724 - __main__ - INFO - save_parquet_data:117 - Saving 1738885 rows to ./filtered_data_parquet/typescript.parquet.
+2025-05-23 14:31:25,853 - __main__ - INFO - save_parquet_data:121 - Data saved successfully to ./filtered_data_parquet/typescript.parquet.
+2025-05-23 14:31:25,853 - __main__ - INFO - process_single_language:375 - Successfully completed processing for typescript
+2025-05-23 14:31:25,877 - __main__ - INFO - main:419 - Data processing completed.
+2025-05-23 14:31:25,877 - __main__ - INFO - main:420 - Successfully processed: 10/10 languages
+2025-05-23 14:31:25,877 - __main__ - INFO - main:423 - Successful: c, cpp, c-sharp, go, java, javascript, python, ruby, scala, typescript
