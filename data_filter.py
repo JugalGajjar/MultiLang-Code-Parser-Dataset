@@ -155,7 +155,7 @@ def log_statistics_and_filter(
     sns.boxplot(x=df["avg_line_length"])
     plt.title(f"Boxplot of Average Line Length for {lang.upper()}")
     plt.xlabel("Average Line Length")
-    plot_path = f"{plot_save_directory}/{lang.upper()}_box_plot_avg_line_length.png"
+    plot_path = f"{plot_save_directory}/{lang}_box_plot_avg_line_length.png"
     plt.savefig(plot_path)
     plt.close()  # Close the figure to free memory
     logging.info(f"Box plot for average line length saved to {plot_path}")
@@ -225,7 +225,7 @@ def log_statistics_and_filter(
     plt.xticks(rotation=45)
     
     # Save the plot
-    dist_plot_path = f"{plot_save_directory}/{lang.upper()}_distribution_of_code_lengths.png"
+    dist_plot_path = f"{plot_save_directory}/{lang}_distribution_of_code_lengths.png"
     plt.savefig(dist_plot_path, bbox_inches="tight")
     plt.close()  # Close the figure to free memory
     logging.info(f"Distribution of code lengths saved to {dist_plot_path}")
@@ -337,7 +337,7 @@ def main():
         description="Code Dataset Filter - Processes and filters programming language datasets")
     
     parser.add_argument(
-        "-d", "--download-in-parts", 
+        "-d", "--process-in-parts", 
         action="store_true",
         help="Process data in parts instead of all at once. Useful for large datasets.")
     
@@ -345,8 +345,8 @@ def main():
         "-p", "--partition-num", 
         type=int,
         default=0,
-        choices=[1, 2, 3, 4],
-        help="Partition number (1-4) to process specific languages. Each partition contains 3 languages.")
+        choices=[1, 2, 3, 4, 5],
+        help="Partition number (1-5) to process specific languages. Each partition contains 2 languages.")
     
     parser.add_argument(
         "-s", "--random-seed", 
@@ -362,25 +362,27 @@ def main():
     # Define all supported programming languages
     languages = [
         "c", "cpp", "c-sharp", "go", "java", "javascript", 
-        "kotlin", "python", "ruby", "rust", "scala", "typescript"
+        "python", "ruby", "scala", "typescript"
     ]
 
     # Apply partitioning if specified
     selected_languages = languages
-    if args.download_in_parts and args.partition_num > 0:
-        logging.info(f"Processing partition {args.partition_num} of 4")
+    if args.process_in_parts and args.partition_num > 0:
+        logging.info(f"Processing partition {args.partition_num} of 5")
         
         # Select languages based on partition number
         if args.partition_num == 1:
-            selected_languages = languages[:3]  # c, cpp, c-sharp
+            selected_languages = languages[:2]
         elif args.partition_num == 2:
-            selected_languages = languages[3:6]  # go, java, javascript
+            selected_languages = languages[2:4]
         elif args.partition_num == 3:
-            selected_languages = languages[6:9]  # kotlin, python, ruby
+            selected_languages = languages[4:6]
         elif args.partition_num == 4:
-            selected_languages = languages[9:]  # rust, scala, typescript
+            selected_languages = languages[6:8]
+        elif args.partition_num == 5:
+            selected_languages = languages[8:]
         else:
-            logging.error(f"Invalid partition number {args.partition_num}. It should be a number between 1-4 (inclusive).")
+            logging.error(f"Invalid partition number {args.partition_num}. It should be a number between 1-5 (inclusive).")
             return
     
     # Process selected language datasets
