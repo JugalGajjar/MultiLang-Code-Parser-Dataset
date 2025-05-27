@@ -5,3 +5,4 @@ numpy
 pandas
 matplotlib
 seaborn
+tree_sitter==0.21.0
