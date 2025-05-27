@@ -133,12 +133,21 @@ def calculate_code_metrics(code: str) -> tuple[float, int]:
     Returns:
         Tuple containing (avg_line_length, line_count)
     """
+    merge_flag = False  # Flag to merge lines ending with backslash
+    content = ""
     lines = code.strip().split("\n")
     for i, line in enumerate(lines):
         if line == "":
             lines.pop(i) # Remove empty lines
         if line.endswith("\\"):
-            lines.pop(i)  # Remove lines ending with backslash
+            content += line[:-1]
+            merge_flag = True
+        if merge_flag:
+            content += line
+            lines[i] = content
+            lines.pop(i-1)  # Remove the previous line
+            content = ""
+            merge_flag = False
     line_count = len(lines)
 
     if line_count == 0:
