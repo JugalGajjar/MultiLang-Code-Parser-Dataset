@@ -149,7 +149,7 @@ def main():
     """
     languages = [
         "c", "cpp", "c-sharp", "go", "java", "javascript", 
-        "kotlin", "python", "ruby", "rust", "scala", "typescript"
+        "python", "ruby", "scala", "typescript"
     ]
     
     logger.info(f"Starting processing for {len(languages)} languages.")
