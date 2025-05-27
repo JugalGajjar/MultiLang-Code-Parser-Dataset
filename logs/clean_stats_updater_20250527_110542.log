@@ -1,0 +1,83 @@
+2025-05-27 11:05:42,705 - root - INFO - setup_logging:41 - Logging initialized. Log file: ./logs/clean_stats_updater_20250527_110542.log
+2025-05-27 11:05:42,705 - __main__ - INFO - create_output_directory:56 - Output directory ensured: ./filtered_data_parquet
+2025-05-27 11:05:42,705 - __main__ - INFO - load_parquet_data:85 - Loading data from ./filtered_data_parquet/c.parquet
+2025-05-27 11:05:44,943 - __main__ - INFO - load_parquet_data:89 - Successfully loaded 1752078 rows from ./filtered_data_parquet/c.parquet
+2025-05-27 11:06:31,981 - __main__ - INFO - update_code_metrics_and_log:174 - Total number of rows in the dataset: 1752078
+2025-05-27 11:06:31,981 - __main__ - INFO - update_code_metrics_and_log:175 - Average line count (mean over 'line_count'): 61.85
+2025-05-27 11:06:31,981 - __main__ - INFO - update_code_metrics_and_log:176 - Average average line length (mean over 'avg_line_length'): 27.98
+2025-05-27 11:06:31,981 - __main__ - INFO - save_parquet_data:116 - Saving 1752078 rows to ./filtered_data_parquet/c.parquet
+2025-05-27 11:06:37,069 - __main__ - INFO - save_parquet_data:120 - Data saved successfully to ./filtered_data_parquet/c.parquet
+2025-05-27 11:06:37,069 - __main__ - INFO - process_language_data:197 - Processing completed for C language.
+2025-05-27 11:06:37,328 - __main__ - INFO - load_parquet_data:85 - Loading data from ./filtered_data_parquet/cpp.parquet
+2025-05-27 11:06:40,075 - __main__ - INFO - load_parquet_data:89 - Successfully loaded 1769333 rows from ./filtered_data_parquet/cpp.parquet
+2025-05-27 11:07:33,139 - __main__ - INFO - update_code_metrics_and_log:174 - Total number of rows in the dataset: 1769333
+2025-05-27 11:07:33,139 - __main__ - INFO - update_code_metrics_and_log:175 - Average line count (mean over 'line_count'): 87.99
+2025-05-27 11:07:33,139 - __main__ - INFO - update_code_metrics_and_log:176 - Average average line length (mean over 'avg_line_length'): 28.12
+2025-05-27 11:07:33,139 - __main__ - INFO - save_parquet_data:116 - Saving 1769333 rows to ./filtered_data_parquet/cpp.parquet
+2025-05-27 11:07:40,253 - __main__ - INFO - save_parquet_data:120 - Data saved successfully to ./filtered_data_parquet/cpp.parquet
+2025-05-27 11:07:40,254 - __main__ - INFO - process_language_data:197 - Processing completed for CPP language.
+2025-05-27 11:07:40,520 - __main__ - INFO - load_parquet_data:85 - Loading data from ./filtered_data_parquet/c-sharp.parquet
+2025-05-27 11:07:42,514 - __main__ - INFO - load_parquet_data:89 - Successfully loaded 1763508 rows from ./filtered_data_parquet/c-sharp.parquet
+2025-05-27 11:08:25,973 - __main__ - INFO - update_code_metrics_and_log:174 - Total number of rows in the dataset: 1763508
+2025-05-27 11:08:25,973 - __main__ - INFO - update_code_metrics_and_log:175 - Average line count (mean over 'line_count'): 44.29
+2025-05-27 11:08:25,973 - __main__ - INFO - update_code_metrics_and_log:176 - Average average line length (mean over 'avg_line_length'): 29.52
+2025-05-27 11:08:25,973 - __main__ - INFO - save_parquet_data:116 - Saving 1763508 rows to ./filtered_data_parquet/c-sharp.parquet
+2025-05-27 11:08:30,448 - __main__ - INFO - save_parquet_data:120 - Data saved successfully to ./filtered_data_parquet/c-sharp.parquet
+2025-05-27 11:08:30,448 - __main__ - INFO - process_language_data:197 - Processing completed for C-SHARP language.
+2025-05-27 11:08:30,885 - __main__ - INFO - load_parquet_data:85 - Loading data from ./filtered_data_parquet/go.parquet
+2025-05-27 11:08:32,993 - __main__ - INFO - load_parquet_data:89 - Successfully loaded 1751120 rows from ./filtered_data_parquet/go.parquet
+2025-05-27 11:09:21,206 - __main__ - INFO - update_code_metrics_and_log:174 - Total number of rows in the dataset: 1751120
+2025-05-27 11:09:21,207 - __main__ - INFO - update_code_metrics_and_log:175 - Average line count (mean over 'line_count'): 68.26
+2025-05-27 11:09:21,207 - __main__ - INFO - update_code_metrics_and_log:176 - Average average line length (mean over 'avg_line_length'): 25.18
+2025-05-27 11:09:21,207 - __main__ - INFO - save_parquet_data:116 - Saving 1751120 rows to ./filtered_data_parquet/go.parquet
+2025-05-27 11:09:26,343 - __main__ - INFO - save_parquet_data:120 - Data saved successfully to ./filtered_data_parquet/go.parquet
+2025-05-27 11:09:26,343 - __main__ - INFO - process_language_data:197 - Processing completed for GO language.
+2025-05-27 11:09:26,576 - __main__ - INFO - load_parquet_data:85 - Loading data from ./filtered_data_parquet/java.parquet
+2025-05-27 11:09:28,486 - __main__ - INFO - load_parquet_data:89 - Successfully loaded 1779659 rows from ./filtered_data_parquet/java.parquet
+2025-05-27 11:10:14,573 - __main__ - INFO - update_code_metrics_and_log:174 - Total number of rows in the dataset: 1779659
+2025-05-27 11:10:14,573 - __main__ - INFO - update_code_metrics_and_log:175 - Average line count (mean over 'line_count'): 54.35
+2025-05-27 11:10:14,573 - __main__ - INFO - update_code_metrics_and_log:176 - Average average line length (mean over 'avg_line_length'): 30.84
+2025-05-27 11:10:14,573 - __main__ - INFO - save_parquet_data:116 - Saving 1779659 rows to ./filtered_data_parquet/java.parquet
+2025-05-27 11:10:19,348 - __main__ - INFO - save_parquet_data:120 - Data saved successfully to ./filtered_data_parquet/java.parquet
+2025-05-27 11:10:19,348 - __main__ - INFO - process_language_data:197 - Processing completed for JAVA language.
+2025-05-27 11:10:19,608 - __main__ - INFO - load_parquet_data:85 - Loading data from ./filtered_data_parquet/javascript.parquet
+2025-05-27 11:10:21,119 - __main__ - INFO - load_parquet_data:89 - Successfully loaded 1718133 rows from ./filtered_data_parquet/javascript.parquet
+2025-05-27 11:11:03,732 - __main__ - INFO - update_code_metrics_and_log:174 - Total number of rows in the dataset: 1718133
+2025-05-27 11:11:03,733 - __main__ - INFO - update_code_metrics_and_log:175 - Average line count (mean over 'line_count'): 44.07
+2025-05-27 11:11:03,733 - __main__ - INFO - update_code_metrics_and_log:176 - Average average line length (mean over 'avg_line_length'): 27.68
+2025-05-27 11:11:03,733 - __main__ - INFO - save_parquet_data:116 - Saving 1718133 rows to ./filtered_data_parquet/javascript.parquet
+2025-05-27 11:11:07,382 - __main__ - INFO - save_parquet_data:120 - Data saved successfully to ./filtered_data_parquet/javascript.parquet
+2025-05-27 11:11:07,382 - __main__ - INFO - process_language_data:197 - Processing completed for JAVASCRIPT language.
+2025-05-27 11:11:07,567 - __main__ - INFO - load_parquet_data:85 - Loading data from ./filtered_data_parquet/python.parquet
+2025-05-27 11:11:09,705 - __main__ - INFO - load_parquet_data:89 - Successfully loaded 1764099 rows from ./filtered_data_parquet/python.parquet
+2025-05-27 11:11:56,602 - __main__ - INFO - update_code_metrics_and_log:174 - Total number of rows in the dataset: 1764099
+2025-05-27 11:11:56,603 - __main__ - INFO - update_code_metrics_and_log:175 - Average line count (mean over 'line_count'): 54.66
+2025-05-27 11:11:56,604 - __main__ - INFO - update_code_metrics_and_log:176 - Average average line length (mean over 'avg_line_length'): 32.59
+2025-05-27 11:11:56,604 - __main__ - INFO - save_parquet_data:116 - Saving 1764099 rows to ./filtered_data_parquet/python.parquet
+2025-05-27 11:12:02,136 - __main__ - INFO - save_parquet_data:120 - Data saved successfully to ./filtered_data_parquet/python.parquet
+2025-05-27 11:12:02,136 - __main__ - INFO - process_language_data:197 - Processing completed for PYTHON language.
+2025-05-27 11:12:02,357 - __main__ - INFO - load_parquet_data:85 - Loading data from ./filtered_data_parquet/ruby.parquet
+2025-05-27 11:12:03,375 - __main__ - INFO - load_parquet_data:89 - Successfully loaded 1756771 rows from ./filtered_data_parquet/ruby.parquet
+2025-05-27 11:12:43,685 - __main__ - INFO - update_code_metrics_and_log:174 - Total number of rows in the dataset: 1756771
+2025-05-27 11:12:43,686 - __main__ - INFO - update_code_metrics_and_log:175 - Average line count (mean over 'line_count'): 27.34
+2025-05-27 11:12:43,686 - __main__ - INFO - update_code_metrics_and_log:176 - Average average line length (mean over 'avg_line_length'): 27.33
+2025-05-27 11:12:43,686 - __main__ - INFO - save_parquet_data:116 - Saving 1756771 rows to ./filtered_data_parquet/ruby.parquet
+2025-05-27 11:12:46,188 - __main__ - INFO - save_parquet_data:120 - Data saved successfully to ./filtered_data_parquet/ruby.parquet
+2025-05-27 11:12:46,189 - __main__ - INFO - process_language_data:197 - Processing completed for RUBY language.
+2025-05-27 11:12:46,310 - __main__ - INFO - load_parquet_data:85 - Loading data from ./filtered_data_parquet/scala.parquet
+2025-05-27 11:12:47,496 - __main__ - INFO - load_parquet_data:89 - Successfully loaded 952890 rows from ./filtered_data_parquet/scala.parquet
+2025-05-27 11:13:11,530 - __main__ - INFO - update_code_metrics_and_log:174 - Total number of rows in the dataset: 952890
+2025-05-27 11:13:11,530 - __main__ - INFO - update_code_metrics_and_log:175 - Average line count (mean over 'line_count'): 44.38
+2025-05-27 11:13:11,530 - __main__ - INFO - update_code_metrics_and_log:176 - Average average line length (mean over 'avg_line_length'): 35.29
+2025-05-27 11:13:11,530 - __main__ - INFO - save_parquet_data:116 - Saving 952890 rows to ./filtered_data_parquet/scala.parquet
+2025-05-27 11:13:13,942 - __main__ - INFO - save_parquet_data:120 - Data saved successfully to ./filtered_data_parquet/scala.parquet
+2025-05-27 11:13:13,942 - __main__ - INFO - process_language_data:197 - Processing completed for SCALA language.
+2025-05-27 11:13:14,051 - __main__ - INFO - load_parquet_data:85 - Loading data from ./filtered_data_parquet/typescript.parquet
+2025-05-27 11:13:15,345 - __main__ - INFO - load_parquet_data:89 - Successfully loaded 1738885 rows from ./filtered_data_parquet/typescript.parquet
+2025-05-27 11:13:58,331 - __main__ - INFO - update_code_metrics_and_log:174 - Total number of rows in the dataset: 1738885
+2025-05-27 11:13:58,331 - __main__ - INFO - update_code_metrics_and_log:175 - Average line count (mean over 'line_count'): 36.84
+2025-05-27 11:13:58,331 - __main__ - INFO - update_code_metrics_and_log:176 - Average average line length (mean over 'avg_line_length'): 29.17
+2025-05-27 11:13:58,331 - __main__ - INFO - save_parquet_data:116 - Saving 1738885 rows to ./filtered_data_parquet/typescript.parquet
+2025-05-27 11:14:01,506 - __main__ - INFO - save_parquet_data:120 - Data saved successfully to ./filtered_data_parquet/typescript.parquet
+2025-05-27 11:14:01,506 - __main__ - INFO - process_language_data:197 - Processing completed for TYPESCRIPT language.
+2025-05-27 11:14:01,665 - __main__ - INFO - main:220 - All languages processed successfully

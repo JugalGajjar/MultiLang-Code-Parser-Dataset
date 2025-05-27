@@ -133,7 +133,12 @@ def calculate_code_metrics(code: str) -> tuple[float, int]:
     Returns:
         Tuple containing (avg_line_length, line_count)
     """
-    lines = code.split("\n")
+    lines = code.strip().split("\n")
+    for i, line in enumerate(lines):
+        if line == "":
+            lines.pop(i) # Remove empty lines
+        if line.endswith("\\"):
+            lines.pop(i)  # Remove lines ending with backslash
     line_count = len(lines)
 
     if line_count == 0:
