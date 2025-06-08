@@ -300,7 +300,7 @@ def load_code_data(
             ds = ds.map(calculate_avg_line_length)
             logging.info("  - 'avg_line_length' feature added to the dataset.")
             
-            ds = ds[:2500000]  # Take first 2.5M samples
+            ds = ds[:1000000]  # Take first 1M samples
             logging.info("  - Data slicing completed.")
             
             # Filter and analyze the dataset
@@ -344,7 +344,7 @@ def main():
     parser.add_argument(
         "-p", "--partition-num", 
         type=int,
-        default=0,
+        default=1,
         choices=[1, 2, 3, 4, 5],
         help="Partition number (1-5) to process specific languages. Each partition contains 2 languages.")
     
