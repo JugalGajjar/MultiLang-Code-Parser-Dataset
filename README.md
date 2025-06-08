@@ -6,7 +6,7 @@
 
 A comprehensive multi-language code dataset that will be processed into a parsing benchmark for language-agnostic AI code parsers.
 
-## Current Status: Filtered StarCoder Dataset Mini
+## Current Status:
 
 This is the second phase of the MLCPD project - the cleaned and filtered version of code samples from the StarCoder dataset has been parsed with language-specific parsers using tree-sitter. The next phase will involve converting these outputs to a unified JSON format to create the full MultiLang Code Parser Dataset.
 
