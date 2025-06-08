@@ -1,0 +1,19 @@
+2025-06-08 17:36:55,614 - root - INFO - setup_logging:47 - Logging initialized. Log file: ./logs/code_parser_20250608_173655.log
+2025-06-08 17:36:55,614 - __main__ - INFO - main:277 - Recursion limit set to 10000 for deep AST parsing.
+2025-06-08 17:36:55,614 - __main__ - INFO - create_output_directory:62 - Output directory ensured: ./parsed_data_parquet
+2025-06-08 17:36:55,614 - __main__ - INFO - main:294 - Starting batch processing for 1 languages
+2025-06-08 17:36:55,614 - __main__ - INFO - process_single_language:251 - Starting parsing pipeline for C_SHARP
+2025-06-08 17:36:55,614 - __main__ - INFO - load_parquet_data:91 - Loading data from ./filtered_data_parquet/c_sharp.parquet.
+2025-06-08 17:36:56,525 - __main__ - INFO - load_parquet_data:95 - Successfully loaded 705203 rows from ./filtered_data_parquet/c_sharp.parquet.
+2025-06-08 17:36:56,525 - __main__ - INFO - parse_code:219 - Parsing code for C_SHARP.
+2025-06-08 17:40:55,737 - __main__ - INFO - parse_code:231 - New features added: 'lang_specific_parse', 'ast_node_count', 'num_errors'.
+2025-06-08 17:40:55,738 - __main__ - INFO - parse_code:232 - Parsing completed for C_SHARP.
+2025-06-08 17:40:55,749 - __main__ - INFO - save_parquet_data:128 - Saving 176300 rows to ./parsed_data_parquet/c_sharp_parsed_1.parquet.
+2025-06-08 17:41:01,969 - __main__ - INFO - save_parquet_data:134 - Saving 176301 rows to ./parsed_data_parquet/c_sharp_parsed_2.parquet.
+2025-06-08 17:41:06,918 - __main__ - INFO - save_parquet_data:140 - Saving 176301 rows to ./parsed_data_parquet/c_sharp_parsed_3.parquet.
+2025-06-08 17:41:11,760 - __main__ - INFO - save_parquet_data:146 - Saving 176301 rows to ./parsed_data_parquet/c_sharp_parsed_4.parquet.
+2025-06-08 17:41:16,752 - __main__ - INFO - save_parquet_data:150 - All data saved successfully.
+2025-06-08 17:41:16,753 - __main__ - INFO - process_single_language:263 - Successfully completed processing for c_sharp
+2025-06-08 17:41:18,092 - __main__ - INFO - main:311 - Data processing completed.
+2025-06-08 17:41:18,092 - __main__ - INFO - main:312 - Successfully processed: 1/1 languages
+2025-06-08 17:41:18,092 - __main__ - INFO - main:315 - Successful: c_sharp

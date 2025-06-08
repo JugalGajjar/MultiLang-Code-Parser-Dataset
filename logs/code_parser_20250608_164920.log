@@ -1,0 +1,120 @@
+2025-06-08 16:49:20,287 - root - INFO - setup_logging:47 - Logging initialized. Log file: ./logs/code_parser_20250608_164920.log
+2025-06-08 16:49:20,287 - __main__ - INFO - main:277 - Recursion limit set to 10000 for deep AST parsing.
+2025-06-08 16:49:20,287 - __main__ - INFO - create_output_directory:62 - Output directory ensured: ./parsed_data_parquet
+2025-06-08 16:49:20,287 - __main__ - INFO - main:291 - Starting batch processing for 10 languages
+2025-06-08 16:49:20,287 - __main__ - INFO - process_single_language:251 - Starting parsing pipeline for C
+2025-06-08 16:49:20,287 - __main__ - INFO - load_parquet_data:91 - Loading data from ./filtered_data_parquet/c.parquet.
+2025-06-08 16:49:21,236 - __main__ - INFO - load_parquet_data:95 - Successfully loaded 700821 rows from ./filtered_data_parquet/c.parquet.
+2025-06-08 16:49:21,236 - __main__ - INFO - parse_code:219 - Parsing code for C.
+2025-06-08 16:54:52,545 - __main__ - INFO - parse_code:231 - New features added: 'lang_specific_parse', 'ast_node_count', 'num_errors'.
+2025-06-08 16:54:52,546 - __main__ - INFO - parse_code:232 - Parsing completed for C.
+2025-06-08 16:54:52,556 - __main__ - INFO - save_parquet_data:128 - Saving 175205 rows to ./parsed_data_parquet/c_parsed_1.parquet.
+2025-06-08 16:54:56,866 - __main__ - INFO - save_parquet_data:134 - Saving 175205 rows to ./parsed_data_parquet/c_parsed_2.parquet.
+2025-06-08 16:55:01,058 - __main__ - INFO - save_parquet_data:140 - Saving 175205 rows to ./parsed_data_parquet/c_parsed_3.parquet.
+2025-06-08 16:55:05,300 - __main__ - INFO - save_parquet_data:146 - Saving 175206 rows to ./parsed_data_parquet/c_parsed_4.parquet.
+2025-06-08 16:55:09,653 - __main__ - INFO - save_parquet_data:150 - All data saved successfully.
+2025-06-08 16:55:09,656 - __main__ - INFO - process_single_language:263 - Successfully completed processing for c
+2025-06-08 16:55:10,470 - __main__ - INFO - process_single_language:251 - Starting parsing pipeline for CPP
+2025-06-08 16:55:10,470 - __main__ - INFO - load_parquet_data:91 - Loading data from ./filtered_data_parquet/cpp.parquet.
+2025-06-08 16:55:11,974 - __main__ - INFO - load_parquet_data:95 - Successfully loaded 707641 rows from ./filtered_data_parquet/cpp.parquet.
+2025-06-08 16:55:11,974 - __main__ - INFO - parse_code:219 - Parsing code for CPP.
+2025-06-08 17:02:13,232 - __main__ - INFO - parse_code:231 - New features added: 'lang_specific_parse', 'ast_node_count', 'num_errors'.
+2025-06-08 17:02:13,233 - __main__ - INFO - parse_code:232 - Parsing completed for CPP.
+2025-06-08 17:02:13,269 - __main__ - INFO - save_parquet_data:128 - Saving 176910 rows to ./parsed_data_parquet/cpp_parsed_1.parquet.
+2025-06-08 17:02:32,452 - __main__ - INFO - save_parquet_data:134 - Saving 176910 rows to ./parsed_data_parquet/cpp_parsed_2.parquet.
+2025-06-08 17:02:54,923 - __main__ - INFO - save_parquet_data:140 - Saving 176910 rows to ./parsed_data_parquet/cpp_parsed_3.parquet.
+2025-06-08 17:03:21,659 - __main__ - INFO - save_parquet_data:146 - Saving 176911 rows to ./parsed_data_parquet/cpp_parsed_4.parquet.
+2025-06-08 17:03:49,300 - __main__ - INFO - save_parquet_data:150 - All data saved successfully.
+2025-06-08 17:03:49,304 - __main__ - INFO - process_single_language:263 - Successfully completed processing for cpp
+2025-06-08 17:04:05,926 - __main__ - INFO - process_single_language:251 - Starting parsing pipeline for C_SHARP
+2025-06-08 17:04:05,927 - __main__ - INFO - load_parquet_data:91 - Loading data from ./filtered_data_parquet/c_sharp.parquet.
+2025-06-08 17:04:05,928 - __main__ - ERROR - load_parquet_data:98 - File not found: ./filtered_data_parquet/c_sharp.parquet.
+2025-06-08 17:04:05,928 - __main__ - ERROR - process_single_language:268 - Failed to process c_sharp: [Errno 2] No such file or directory: './filtered_data_parquet/c_sharp.parquet'
+2025-06-08 17:04:05,928 - __main__ - INFO - process_single_language:251 - Starting parsing pipeline for GO
+2025-06-08 17:04:05,928 - __main__ - INFO - load_parquet_data:91 - Loading data from ./filtered_data_parquet/go.parquet.
+2025-06-08 17:04:06,955 - __main__ - INFO - load_parquet_data:95 - Successfully loaded 700331 rows from ./filtered_data_parquet/go.parquet.
+2025-06-08 17:04:06,955 - __main__ - INFO - parse_code:219 - Parsing code for GO.
+2025-06-08 17:09:25,556 - __main__ - INFO - parse_code:231 - New features added: 'lang_specific_parse', 'ast_node_count', 'num_errors'.
+2025-06-08 17:09:25,557 - __main__ - INFO - parse_code:232 - Parsing completed for GO.
+2025-06-08 17:09:25,568 - __main__ - INFO - save_parquet_data:128 - Saving 175082 rows to ./parsed_data_parquet/go_parsed_1.parquet.
+2025-06-08 17:09:32,763 - __main__ - INFO - save_parquet_data:134 - Saving 175083 rows to ./parsed_data_parquet/go_parsed_2.parquet.
+2025-06-08 17:09:39,359 - __main__ - INFO - save_parquet_data:140 - Saving 175083 rows to ./parsed_data_parquet/go_parsed_3.parquet.
+2025-06-08 17:09:46,844 - __main__ - INFO - save_parquet_data:146 - Saving 175083 rows to ./parsed_data_parquet/go_parsed_4.parquet.
+2025-06-08 17:09:54,359 - __main__ - INFO - save_parquet_data:150 - All data saved successfully.
+2025-06-08 17:09:54,359 - __main__ - INFO - process_single_language:263 - Successfully completed processing for go
+2025-06-08 17:09:56,168 - __main__ - INFO - process_single_language:251 - Starting parsing pipeline for JAVA
+2025-06-08 17:09:56,168 - __main__ - INFO - load_parquet_data:91 - Loading data from ./filtered_data_parquet/java.parquet.
+2025-06-08 17:09:57,175 - __main__ - INFO - load_parquet_data:95 - Successfully loaded 711922 rows from ./filtered_data_parquet/java.parquet.
+2025-06-08 17:09:57,176 - __main__ - INFO - parse_code:219 - Parsing code for JAVA.
+2025-06-08 17:13:51,575 - __main__ - INFO - parse_code:231 - New features added: 'lang_specific_parse', 'ast_node_count', 'num_errors'.
+2025-06-08 17:13:51,575 - __main__ - INFO - parse_code:232 - Parsing completed for JAVA.
+2025-06-08 17:13:51,586 - __main__ - INFO - save_parquet_data:128 - Saving 177980 rows to ./parsed_data_parquet/java_parsed_1.parquet.
+2025-06-08 17:13:56,151 - __main__ - INFO - save_parquet_data:134 - Saving 177981 rows to ./parsed_data_parquet/java_parsed_2.parquet.
+2025-06-08 17:14:00,732 - __main__ - INFO - save_parquet_data:140 - Saving 177980 rows to ./parsed_data_parquet/java_parsed_3.parquet.
+2025-06-08 17:14:05,226 - __main__ - INFO - save_parquet_data:146 - Saving 177981 rows to ./parsed_data_parquet/java_parsed_4.parquet.
+2025-06-08 17:14:09,817 - __main__ - INFO - save_parquet_data:150 - All data saved successfully.
+2025-06-08 17:14:09,818 - __main__ - INFO - process_single_language:263 - Successfully completed processing for java
+2025-06-08 17:14:10,719 - __main__ - INFO - process_single_language:251 - Starting parsing pipeline for JAVASCRIPT
+2025-06-08 17:14:10,719 - __main__ - INFO - load_parquet_data:91 - Loading data from ./filtered_data_parquet/javascript.parquet.
+2025-06-08 17:14:11,460 - __main__ - INFO - load_parquet_data:95 - Successfully loaded 687775 rows from ./filtered_data_parquet/javascript.parquet.
+2025-06-08 17:14:11,460 - __main__ - INFO - parse_code:219 - Parsing code for JAVASCRIPT.
+2025-06-08 17:17:34,732 - __main__ - INFO - parse_code:231 - New features added: 'lang_specific_parse', 'ast_node_count', 'num_errors'.
+2025-06-08 17:17:34,732 - __main__ - INFO - parse_code:232 - Parsing completed for JAVASCRIPT.
+2025-06-08 17:17:34,742 - __main__ - INFO - save_parquet_data:128 - Saving 171943 rows to ./parsed_data_parquet/javascript_parsed_1.parquet.
+2025-06-08 17:17:38,826 - __main__ - INFO - save_parquet_data:134 - Saving 171944 rows to ./parsed_data_parquet/javascript_parsed_2.parquet.
+2025-06-08 17:17:43,150 - __main__ - INFO - save_parquet_data:140 - Saving 171944 rows to ./parsed_data_parquet/javascript_parsed_3.parquet.
+2025-06-08 17:17:47,852 - __main__ - INFO - save_parquet_data:146 - Saving 171944 rows to ./parsed_data_parquet/javascript_parsed_4.parquet.
+2025-06-08 17:17:52,246 - __main__ - INFO - save_parquet_data:150 - All data saved successfully.
+2025-06-08 17:17:52,246 - __main__ - INFO - process_single_language:263 - Successfully completed processing for javascript
+2025-06-08 17:17:53,117 - __main__ - INFO - process_single_language:251 - Starting parsing pipeline for PYTHON
+2025-06-08 17:17:53,117 - __main__ - INFO - load_parquet_data:91 - Loading data from ./filtered_data_parquet/python.parquet.
+2025-06-08 17:17:54,349 - __main__ - INFO - load_parquet_data:95 - Successfully loaded 706126 rows from ./filtered_data_parquet/python.parquet.
+2025-06-08 17:17:54,349 - __main__ - INFO - parse_code:219 - Parsing code for PYTHON.
+2025-06-08 17:22:52,151 - __main__ - INFO - parse_code:231 - New features added: 'lang_specific_parse', 'ast_node_count', 'num_errors'.
+2025-06-08 17:22:52,151 - __main__ - INFO - parse_code:232 - Parsing completed for PYTHON.
+2025-06-08 17:22:52,161 - __main__ - INFO - save_parquet_data:128 - Saving 176531 rows to ./parsed_data_parquet/python_parsed_1.parquet.
+2025-06-08 17:22:57,835 - __main__ - INFO - save_parquet_data:134 - Saving 176532 rows to ./parsed_data_parquet/python_parsed_2.parquet.
+2025-06-08 17:23:03,311 - __main__ - INFO - save_parquet_data:140 - Saving 176531 rows to ./parsed_data_parquet/python_parsed_3.parquet.
+2025-06-08 17:23:08,929 - __main__ - INFO - save_parquet_data:146 - Saving 176532 rows to ./parsed_data_parquet/python_parsed_4.parquet.
+2025-06-08 17:23:14,593 - __main__ - INFO - save_parquet_data:150 - All data saved successfully.
+2025-06-08 17:23:14,594 - __main__ - INFO - process_single_language:263 - Successfully completed processing for python
+2025-06-08 17:23:15,548 - __main__ - INFO - process_single_language:251 - Starting parsing pipeline for RUBY
+2025-06-08 17:23:15,548 - __main__ - INFO - load_parquet_data:91 - Loading data from ./filtered_data_parquet/ruby.parquet.
+2025-06-08 17:23:16,188 - __main__ - INFO - load_parquet_data:95 - Successfully loaded 703473 rows from ./filtered_data_parquet/ruby.parquet.
+2025-06-08 17:23:16,188 - __main__ - INFO - parse_code:219 - Parsing code for RUBY.
+2025-06-08 17:25:31,419 - __main__ - INFO - parse_code:231 - New features added: 'lang_specific_parse', 'ast_node_count', 'num_errors'.
+2025-06-08 17:25:31,419 - __main__ - INFO - parse_code:232 - Parsing completed for RUBY.
+2025-06-08 17:25:31,429 - __main__ - INFO - save_parquet_data:128 - Saving 175868 rows to ./parsed_data_parquet/ruby_parsed_1.parquet.
+2025-06-08 17:25:33,492 - __main__ - INFO - save_parquet_data:134 - Saving 175868 rows to ./parsed_data_parquet/ruby_parsed_2.parquet.
+2025-06-08 17:25:35,586 - __main__ - INFO - save_parquet_data:140 - Saving 175868 rows to ./parsed_data_parquet/ruby_parsed_3.parquet.
+2025-06-08 17:25:37,669 - __main__ - INFO - save_parquet_data:146 - Saving 175869 rows to ./parsed_data_parquet/ruby_parsed_4.parquet.
+2025-06-08 17:25:39,758 - __main__ - INFO - save_parquet_data:150 - All data saved successfully.
+2025-06-08 17:25:39,758 - __main__ - INFO - process_single_language:263 - Successfully completed processing for ruby
+2025-06-08 17:25:40,273 - __main__ - INFO - process_single_language:251 - Starting parsing pipeline for SCALA
+2025-06-08 17:25:40,273 - __main__ - INFO - load_parquet_data:91 - Loading data from ./filtered_data_parquet/scala.parquet.
+2025-06-08 17:25:41,239 - __main__ - INFO - load_parquet_data:95 - Successfully loaded 702833 rows from ./filtered_data_parquet/scala.parquet.
+2025-06-08 17:25:41,239 - __main__ - INFO - parse_code:219 - Parsing code for SCALA.
+2025-06-08 17:30:36,762 - __main__ - INFO - parse_code:231 - New features added: 'lang_specific_parse', 'ast_node_count', 'num_errors'.
+2025-06-08 17:30:36,762 - __main__ - INFO - parse_code:232 - Parsing completed for SCALA.
+2025-06-08 17:30:36,772 - __main__ - INFO - save_parquet_data:128 - Saving 175708 rows to ./parsed_data_parquet/scala_parsed_1.parquet.
+2025-06-08 17:30:40,704 - __main__ - INFO - save_parquet_data:134 - Saving 175708 rows to ./parsed_data_parquet/scala_parsed_2.parquet.
+2025-06-08 17:30:44,615 - __main__ - INFO - save_parquet_data:140 - Saving 175708 rows to ./parsed_data_parquet/scala_parsed_3.parquet.
+2025-06-08 17:30:48,481 - __main__ - INFO - save_parquet_data:146 - Saving 175709 rows to ./parsed_data_parquet/scala_parsed_4.parquet.
+2025-06-08 17:30:52,609 - __main__ - INFO - save_parquet_data:150 - All data saved successfully.
+2025-06-08 17:30:52,609 - __main__ - INFO - process_single_language:263 - Successfully completed processing for scala
+2025-06-08 17:30:53,298 - __main__ - INFO - process_single_language:251 - Starting parsing pipeline for TYPESCRIPT
+2025-06-08 17:30:53,298 - __main__ - INFO - load_parquet_data:91 - Loading data from ./filtered_data_parquet/typescript.parquet.
+2025-06-08 17:30:53,964 - __main__ - INFO - load_parquet_data:95 - Successfully loaded 695597 rows from ./filtered_data_parquet/typescript.parquet.
+2025-06-08 17:30:53,964 - __main__ - INFO - parse_code:219 - Parsing code for TYPESCRIPT.
+2025-06-08 17:34:30,733 - __main__ - INFO - parse_code:231 - New features added: 'lang_specific_parse', 'ast_node_count', 'num_errors'.
+2025-06-08 17:34:30,733 - __main__ - INFO - parse_code:232 - Parsing completed for TYPESCRIPT.
+2025-06-08 17:34:30,743 - __main__ - INFO - save_parquet_data:128 - Saving 173899 rows to ./parsed_data_parquet/typescript_parsed_1.parquet.
+2025-06-08 17:34:34,200 - __main__ - INFO - save_parquet_data:134 - Saving 173899 rows to ./parsed_data_parquet/typescript_parsed_2.parquet.
+2025-06-08 17:34:37,657 - __main__ - INFO - save_parquet_data:140 - Saving 173899 rows to ./parsed_data_parquet/typescript_parsed_3.parquet.
+2025-06-08 17:34:41,218 - __main__ - INFO - save_parquet_data:146 - Saving 173900 rows to ./parsed_data_parquet/typescript_parsed_4.parquet.
+2025-06-08 17:34:44,821 - __main__ - INFO - save_parquet_data:150 - All data saved successfully.
+2025-06-08 17:34:44,821 - __main__ - INFO - process_single_language:263 - Successfully completed processing for typescript
+2025-06-08 17:34:45,513 - __main__ - INFO - main:308 - Data processing completed.
+2025-06-08 17:34:45,513 - __main__ - INFO - main:309 - Successfully processed: 9/10 languages
+2025-06-08 17:34:45,513 - __main__ - INFO - main:312 - Successful: c, cpp, go, java, javascript, python, ruby, scala, typescript
+2025-06-08 17:34:45,513 - __main__ - ERROR - main:315 - Failed: c_sharp
