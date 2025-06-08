@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/downloads/)
-[![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Dataset-blue)](https://huggingface.co/datasets/jugalgajjar/Filtered-StarCoder-Dataset-Mini)
+[![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Dataset-blue)](https://huggingface.co/datasets/jugalgajjar/MultiLang-Code-Parser-Dataset)
 
 A comprehensive multi-language code dataset that will be processed into a parsing benchmark for language-agnostic AI code parsers.
 
@@ -165,18 +165,18 @@ pip install datasets
 from datasets import load_dataset
 
 # Load entire dataset
-dataset = load_dataset("jugalgajjar/Filtered-StarCoder-Dataset-Mini")
+dataset = load_dataset("jugalgajjar/MultiLang-Code-Parser-Dataset")
 
 # Load specific language
 python_dataset = load_dataset(
-    "jugalgajjar/Filtered-StarCoder-Dataset-Mini",
+    "jugalgajjar/MultiLang-Code-Parser-Dataset",
     data_files="python_parsed_1.parquet"
 )
 ```
 
 ### Manual Download
 
-1. Visit [dataset page](https://huggingface.co/datasets/jugalgajjar/Filtered-StarCoder-Dataset-Mini)
+1. Visit [dataset page](https://huggingface.co/datasets/jugalgajjar/MultiLang-Code-Parser-Dataset)
 2. Navigate to "Files" tab
 3. Download desired language files (e.g., `python_parsed_1.parquet`)
 
@@ -199,7 +199,7 @@ python_dataset = load_dataset(
   title = {Filtered StarCoder Dataset Mini},
   year = {2025},
   publisher = {HuggingFace},
-  howpublished = {\url{https://huggingface.co/datasets/jugalgajjar/Filtered-StarCoder-Dataset-Mini}}
+  howpublished = {\url{https://huggingface.co/datasets/jugalgajjar/MultiLang-Code-Parser-Dataset}}
 }
 ```
 
