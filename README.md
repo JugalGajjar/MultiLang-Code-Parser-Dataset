@@ -8,29 +8,29 @@ A comprehensive multi-language code dataset that will be processed into a parsin
 
 ## Current Status: Filtered StarCoder Dataset Mini
 
-This is the first phase of the MLCPD project - a cleaned and filtered version of code samples from the StarCoder dataset. The next phase will involve parsing these samples to create the full MultiLang Code Parser Dataset.
+This is the second phase of the MLCPD project - the cleaned and filtered version of code samples from the StarCoder dataset has been parsed with language-specific parsers using tree-sitter. The next phase will involve converting these outputs to a unified JSON format to create the full MultiLang Code Parser Dataset.
 
 ### Key Features (Current Dataset)
 
 - **Cleaned and Filtered Code**: Samples have been processed to remove outliers in terms of line length and code size
-- **Quality Metrics**: Each sample includes metadata about average line length and line count
+- **Quality Metrics**: Each sample includes metadata about average line length and line count of code along with AST node count and error count
 - **Multi-language Support**: 10 programming languages represented in separate subsets
 - **Consistent Format**: All samples follow the same Parquet structure for easy processing
 
 ## Dataset Statistics (Current)
 
 | Language   | Sample Count | Avg. Line Length | Avg. Line Count |
-|------------|--------------|-----------------|------------------|
-| C          | 1,752,078    | 28.07           | 61.85            |
-| C++        | 1,769,333    | 28.16           | 87.99            |
-| C#         | 1,763,508    | 29.53           | 44.29            |
-| Go         | 1,751,120    | 25.18           | 68.26            |
-| Java       | 1,779,659    | 30.84           | 54.35            |
-| JavaScript | 1,718,133    | 27.68           | 44.07            |
-| Python     | 1,764,099    | 32.68           | 54.66            |
-| Ruby       | 1,756,771    | 27.35           | 27.34            |
-| Scala      | 952,890      | 35.30           | 44.38            |
-| TypeScript | 1,738,885    | 29.17           | 36.84            |
+|------------|--------------|------------------|-----------------|
+| C          | 700,821      | 28.08           | 61.76            |
+| C++        | 707,641      | 28.16           | 87.88            |
+| C#         | 705,203      | 29.53           | 44.26            |
+| Go         | 700,331      | 25.18           | 68.22            |
+| Java       | 711,922      | 30.85           | 54.40            |
+| JavaScript | 687,775      | 27.69           | 44.15            |
+| Python     | 706,126      | 32.67           | 54.70            |
+| Ruby       | 703,473      | 27.35           | 27.41            |
+| Scala      | 702,833      | 35.30           | 44.38            |
+| TypeScript | 695,597      | 29.18           | 36.89            |
 
 ## Future Vision: Full MLCPD
 
@@ -42,34 +42,114 @@ The complete MultiLang Code Parser Dataset will include:
 
 ### Planned Data Format
 
+#### Code
+```python
+class Dog:
+    def init(self, name, breed):
+        self.name = name
+        self.breed = breed
+    def bark(self):
+        return f"{self.name} says Woof!"
+def greet_dog(dog):
+    return f"Hello, {dog.name}!"
+# Create a Dog object
+my_dog = Dog("Buddy", "Golden Retriever")
+# Call functions
+print(greet_dog(my_dog))
+print(my_dog.bark())
+```
+
+#### Parsed Output
 ```json
 {
   "language": "python",
   "success": true,
   "metadata": {
-    "filename": "example.py",
-    "avg_line_length": 34.46,
-    "line_count": 69,
-    "ast_node_count": 112
+    "lines": 12,
+    "nodes": 45,
+    "errors": 0
   },
-  "ast": {
-    "type": "Module",
-    "body": [
-      {
-        "type": "ImportFrom",
-        "module": "math",
-        "names": [
-          {
-            "type": "alias",
-            "name": "sqrt",
-            "asname": null
-          }
-        ],
-        "level": 0
+  "imports": [],
+  "functions": [
+    {
+      "name": "greet_dog",
+      "params": ["dog"],
+      "body": [
+        {
+          "type": "return",
+          "value": "f\"Hello, {dog.name}!\""
+        }
+      ]
+    }
+  ],
+  "classes": [
+    {
+      "name": "Dog",
+      "methods": [
+        {
+          "name": "__init__",
+          "params": ["self", "name", "breed"],
+          "body": [
+            {
+              "type": "assign",
+              "target": "self.name",
+              "value": "name"
+            },
+            {
+              "type": "assign",
+              "target": "self.breed", 
+              "value": "breed"
+            }
+          ]
+        },
+        {
+          "name": "bark",
+          "params": ["self"],
+          "body": [
+            {
+              "type": "return",
+              "value": "f\"{self.name} says Woof!\""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": [],
+  "main_body": [
+    {
+      "type": "assign",
+      "target": "my_dog",
+      "value": {
+        "type": "constructor",
+        "class": "Dog",
+        "args": ["\"Buddy\"", "\"Golden Retriever\""]
       }
-      // Additional AST nodes...
-    ]
-  }
+    },
+    {
+      "type": "call",
+      "name": "print",
+      "args": [
+        {
+          "type": "call",
+          "name": "greet_dog",
+          "args": ["my_dog"]
+        }
+      ]
+    },
+    {
+      "type": "call",
+      "name": "print", 
+      "args": [
+        {
+          "type": "method_call",
+          "object": "my_dog",
+          "method": "bark",
+          "args": []
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -90,7 +170,7 @@ dataset = load_dataset("jugalgajjar/Filtered-StarCoder-Dataset-Mini")
 # Load specific language
 python_dataset = load_dataset(
     "jugalgajjar/Filtered-StarCoder-Dataset-Mini",
-    data_files="python.parquet"
+    data_files="python_parsed_1.parquet"
 )
 ```
 
@@ -98,7 +178,7 @@ python_dataset = load_dataset(
 
 1. Visit [dataset page](https://huggingface.co/datasets/jugalgajjar/Filtered-StarCoder-Dataset-Mini)
 2. Navigate to "Files" tab
-3. Download desired language files (e.g., `python.parquet`)
+3. Download desired language files (e.g., `python_parsed_1.parquet`)
 
 ## Dataset Creation Process
 
@@ -106,9 +186,10 @@ python_dataset = load_dataset(
 2. **Filtering**: Removed outliers using IQR method
 3. **Normalization**: Standardized format across languages
 4. **Metadata Generation**: Calculated line metrics
-5. **Serialization**: Stored in Parquet format  
+5. **Serialization**: Stored in Parquet format
+6. **Tree Sitter Parsing**: Parsed code using language-specific parsers
 
-*(Future steps will include parsing and AST conversion)*
+*(Future steps will include AST conversion)*
 
 ## Citation
 
@@ -131,5 +212,5 @@ MIT License - see [LICENSE](LICENSE) for details.
 ## Acknowledgments
 
 - [StarCoder Dataset](https://huggingface.co/datasets/bigcode/starcoderdata) for source code samples
-- [TreeSitter](https://tree-sitter.github.io/tree-sitter/) for future parsing work
+- [TreeSitter](https://tree-sitter.github.io/tree-sitter/) for parsing
 - [Hugging Face](https://huggingface.co/) for dataset hosting
