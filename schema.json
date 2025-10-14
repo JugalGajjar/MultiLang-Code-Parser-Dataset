@@ -1,0 +1,307 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MLCPD Unified Schema",
+  "description": "Universal JSON schema representation across 10 languages",
+  "type": "object",
+  "required": ["language", "success", "metadata", "ast"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "MLCPD schema version",
+      "default": "Version 1.0"
+    },
+    "language": {
+      "type": "string",
+      "enum": ["c", "cpp", "csharp", "go", "java", "javascript", "python", "ruby", "scala", "typescript"],
+      "description": "Source programming language"
+    },
+    "success": {
+      "type": "boolean",
+      "description": "Whether parsing completed without errors"
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["lines", "avg_line_length", "nodes", "errors"],
+      "properties": {
+        "lines": {
+          "type": "integer",
+          "description": "Total lines of code"
+        },
+        "avg_line_length": {
+          "type": "number",
+          "description": "Average line length in characters"
+        },
+        "nodes": {
+          "type": "integer",
+          "description": "Total AST node count"
+        },
+        "errors": {
+          "type": "integer",
+          "description": "Number of parsing errors"
+        },
+        "parse_time_ms": {
+          "type": "number",
+          "description": "Time taken to parse in milliseconds"
+        },
+        "source_hash": {
+          "type": "string",
+          "description": "SHA256 hash of original source code"
+        }
+      }
+    },
+    "ast": {
+      "type": "object",
+      "description": "Objects across 10 languages in unified format",
+      "required": ["root", "nodes"],
+      "properties": {
+        "root": {
+          "type": "string",
+          "description": "Root node type (e.g., 'program', 'translation_unit')"
+        },
+        "nodes": {
+          "type": "array",
+          "description": "All nodes in flat array for efficient processing",
+          "items": {
+            "type": "object",
+            "required": ["id", "type", "text"],
+            "properties": {
+              "id": {
+                "type": "integer",
+                "description": "Unique node identifier"
+              },
+              "type": {
+                "type": "string",
+                "description": "String node type"
+              },
+              "text": {
+                "type": "string",
+                "description": "Original source text for this node"
+              },
+              "start_byte": {
+                "type": "integer",
+                "description": "Start byte position in source"
+              },
+              "end_byte": {
+                "type": "integer",
+                "description": "End byte position in source"
+              },
+              "start_point": {
+                "type": "object",
+                "description": "Start position (line, column)",
+                "properties": {
+                  "row": {"type": "integer"},
+                  "column": {"type": "integer"}
+                }
+              },
+              "end_point": {
+                "type": "object",
+                "description": "End position (line, column)",
+                "properties": {
+                  "row": {"type": "integer"},
+                  "column": {"type": "integer"}
+                }
+              },
+              "children": {
+                "type": "array",
+                "description": "Child node IDs",
+                "items": {"type": "integer"}
+              },
+              "parent": {
+                "type": ["integer", "null"],
+                "description": "Parent node ID"
+              },
+              "field_name": {
+                "type": ["string", "null"],
+                "description": "Field name if node is a named child"
+              },
+              "is_named": {
+                "type": "boolean",
+                "description": "Whether this is a named node (vs anonymous)"
+              },
+              "is_error": {
+                "type": "boolean",
+                "description": "Whether this node represents a parse error"
+              },
+              "language_specific": {
+                "type": "object",
+                "description": "Language-specific node properties",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "node_categories": {
+          "type": "object",
+          "description": "Categorized node IDs for common language concepts",
+          "properties": {
+            "declarations": {
+              "type": "object",
+              "description": "Declaration nodes by type",
+              "properties": {
+                "functions": {
+                  "type": "array",
+                  "items": {"type": "integer"},
+                  "description": "Function/method declaration node IDs"
+                },
+                "variables": {
+                  "type": "array", 
+                  "items": {"type": "integer"},
+                  "description": "Variable declaration node IDs"
+                },
+                "classes": {
+                  "type": "array",
+                  "items": {"type": "integer"},
+                  "description": "Class/struct/interface declaration node IDs"
+                },
+                "imports": {
+                  "type": "array",
+                  "items": {"type": "integer"},
+                  "description": "Import/include statement node IDs"
+                }
+              }
+            },
+            "statements": {
+              "type": "object",
+              "description": "Statement nodes by type",
+              "properties": {
+                "expressions": {
+                  "type": "array",
+                  "items": {"type": "integer"}
+                },
+                "assignments": {
+                  "type": "array",
+                  "items": {"type": "integer"}
+                },
+                "loops": {
+                  "type": "array", 
+                  "items": {"type": "integer"}
+                },
+                "conditionals": {
+                  "type": "array",
+                  "items": {"type": "integer"}
+                },
+                "returns": {
+                  "type": "array",
+                  "items": {"type": "integer"}
+                }
+              }
+            },
+            "expressions": {
+              "type": "object",
+              "description": "Expression nodes by type",
+              "properties": {
+                "calls": {
+                  "type": "array",
+                  "items": {"type": "integer"}
+                },
+                "literals": {
+                  "type": "array",
+                  "items": {"type": "integer"}
+                },
+                "identifiers": {
+                  "type": "array",
+                  "items": {"type": "integer"}
+                },
+                "binary_operations": {
+                  "type": "array",
+                  "items": {"type": "integer"}
+                },
+                "unary_operations": {
+                  "type": "array",
+                  "items": {"type": "integer"}
+                }
+              }
+            }
+          }
+        },
+        "cross_language_map": {
+          "type": "object",
+          "description": "Mapping from language-specific nodes to universal concepts",
+          "properties": {
+            "function_declarations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "node_id": {"type": "integer"},
+                  "universal_type": {
+                    "type": "string",
+                    "enum": ["function", "method", "constructor", "lambda"]
+                  },
+                  "name_node": {"type": ["integer", "null"]},
+                  "parameters_node": {"type": ["integer", "null"]},
+                  "return_type_node": {"type": ["integer", "null"]},
+                  "body_node": {"type": ["integer", "null"]}
+                }
+              }
+            },
+            "class_declarations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "node_id": {"type": "integer"},
+                  "universal_type": {
+                    "type": "string", 
+                    "enum": ["class", "struct", "interface", "trait", "enum"]
+                  },
+                  "name_node": {"type": ["integer", "null"]},
+                  "body_node": {"type": ["integer", "null"]}
+                }
+              }
+            },
+            "import_statements": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "node_id": {"type": "integer"},
+                  "module_path": {"type": ["string", "null"]},
+                  "imported_items": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "errors": {
+      "type": "array",
+      "description": "Detailed parsing errors",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {"type": "string"},
+          "message": {"type": "string"},
+          "start_point": {
+            "type": "object",
+            "properties": {
+              "row": {"type": "integer"},
+              "column": {"type": "integer"}
+            }
+          },
+          "end_point": {
+            "type": "object",
+            "properties": {
+              "row": {"type": "integer"},
+              "column": {"type": "integer"}
+            }
+          }
+        }
+      }
+    },
+    "source_context": {
+      "type": "object",
+      "description": "Original source code context",
+      "properties": {
+        "original_source": {
+          "type": "string",
+          "description": "Original source code (optional for large files)"
+        }
+      }
+    }
+  }
+}
