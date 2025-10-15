@@ -764,16 +764,19 @@ def process_parquet_file(input_file: str, output_dir: str, max_rows: Optional[in
     df["universal_schema"] = results
     orig_length = len(df)
     df.dropna(inplace=True)
-    print("Rows lost after universal conversion: ", orig_length-len(df))
+    successful_conversions = len(df)
+    print("Rows lost after universal conversion: ", orig_length-successful_conversions)
     
     input_filename = Path(input_file).stem
     output_file = Path(output_dir) / f"{input_filename}.parquet"
     df.to_parquet(output_file)
+    del df  # Free memory
+    logger.info("Wrote converted parquet file: %s", output_file)
     
     return {
         "input_file": input_file,
         "total_rows": orig_length,
-        "successful_conversions": len(df)
+        "successful_conversions": successful_conversions
     }
 
 def process_folder(input_folder: str, output_folder: str, max_rows_per_file: Optional[int] = None) -> None:
@@ -823,8 +826,8 @@ def process_folder(input_folder: str, output_folder: str, max_rows_per_file: Opt
     logger.info("TOTAL: %d/%d (%.1f%% success rate)", total_success, total_rows, overall_rate * 100)
 
 
-INPUT_FOLDER = "testing_big"  
-OUTPUT_FOLDER = Path.cwd() / "testing_big_out"
+INPUT_FOLDER = "parsed_data_parquet"  
+OUTPUT_FOLDER = Path.cwd() / "final_parquet_output"
 MAX_ROWS_PER_FILE = None
 
 # Create output folder
