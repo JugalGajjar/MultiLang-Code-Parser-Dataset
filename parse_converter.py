@@ -814,6 +814,13 @@ def process_folder(input_folder: str, output_folder: str, max_rows_per_file: Opt
         success_rate = stats['successful_conversions'] / stats['total_rows'] if stats['total_rows'] > 0 else 0
         logger.info("%s: %d/%d (%.1%%)", Path(stats['input_file']).name,
                     stats['successful_conversions'], stats['total_rows'], success_rate * 100)
+    
+    if total_rows > 0:
+        overall_rate = total_success / total_rows
+    else:
+        overall_rate = 0.0
+
+    logger.info("TOTAL: %d/%d (%.1f%% success rate)", total_success, total_rows, overall_rate * 100)
 
 
 INPUT_FOLDER = "testing_big"  
