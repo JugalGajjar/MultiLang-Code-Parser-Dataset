@@ -7,3 +7,4 @@ matplotlib
 seaborn
 tree_sitter==0.21.0
 tree_sitter_languages
+ipython
