@@ -68,12 +68,6 @@ This dataset is hosted on the Hugging Face Hub and can be easily accessed using 
 pip install datasets
 ```
 
-#### Install the Required Library
-
-```bash
-pip install datasets
-```
-
 #### Import Library
 
 ```bash
