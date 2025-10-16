@@ -11,3 +11,5 @@ tree_sitter_languages
 ipython
 scikit-learn
 openpyxl
+pyvis
+networkx
