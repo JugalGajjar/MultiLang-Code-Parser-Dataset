@@ -19,7 +19,7 @@ import pandas as pd
 import json
 import os
 import logging
-import datetime
+from datetime import datetime
 import hashlib
 from pathlib import Path
 from typing import Dict, List, Optional, Any
@@ -826,21 +826,23 @@ def process_folder(input_folder: str, output_folder: str, max_rows_per_file: Opt
     logger.info("TOTAL: %d/%d (%.1f%% success rate)", total_success, total_rows, overall_rate * 100)
 
 
-INPUT_FOLDER = "parsed_data_parquet"  
-OUTPUT_FOLDER = Path.cwd() / "final_parquet_output"
-MAX_ROWS_PER_FILE = None
+def main():
+    INPUT_FOLDER = "parsed_data_parquet"  
+    OUTPUT_FOLDER = Path.cwd() / "final_parquet_output"
+    MAX_ROWS_PER_FILE = None
 
-# Create output folder
-OUTPUT_FOLDER.mkdir(exist_ok=True)
-logger.info("Input folder: %s", INPUT_FOLDER)
-logger.info("Output folder: %s", OUTPUT_FOLDER)
+    # Create output folder
+    OUTPUT_FOLDER.mkdir(exist_ok=True)
+    logger.info("Input folder: %s", INPUT_FOLDER)
+    logger.info("Output folder: %s", OUTPUT_FOLDER)
 
-# ==== RUN PROCESSING ====
-if __name__ == "__main__":
     if not Path(INPUT_FOLDER).exists():
         logger.error("Input folder not found: %s", INPUT_FOLDER)
         exit(1)
-        
+            
     logger.info("Starting MLCPD Tree-Sitter Conversion...")
     process_folder(INPUT_FOLDER, OUTPUT_FOLDER, MAX_ROWS_PER_FILE)
     logger.info("Done! Output parquet files in: %s", OUTPUT_FOLDER)
+
+if __name__ == "__main__":
+    main()
