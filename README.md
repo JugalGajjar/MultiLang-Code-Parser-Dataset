@@ -129,6 +129,35 @@ You can also manually download specific language files from the Hugging Face rep
 
 ---
 
+## 🧩 AST Visualization Tool
+
+A lightweight Python utility is included to visualize parsed Abstract Syntax Trees (ASTs) from the dataset in an interactive and hierarchical format.<br>
+It works for all supported languages (e.g., Python, C++, Java, etc.) whose ASTs follow the dataset’s `universal_schema` structure.
+
+### Overview
+
+This tool renders each AST as a directed graph where:
+- Nodes represent syntactic elements (functions, expressions, identifiers, etc.)
+- Edges show parent–child relationships
+- Colors distinguish root vs. nested nodes
+
+### Usage
+
+Run the script with:
+```bash
+python visualize_ast.py --json_parse example_ast.json --output ast_viz.html
+```
+where,
+- `--json_parse` → Path to the JSON file which stores your AST
+- `--output` → Output HTML filename (default: `ast_visualization.html`)
+
+This generates an HTML visualization that can be opened in any browser:
+```bash
+open ast_viz.html
+```
+
+---
+
 ## 📂 Dataset Structure
 
 ```
