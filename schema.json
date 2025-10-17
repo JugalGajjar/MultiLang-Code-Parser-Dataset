@@ -39,10 +39,6 @@
           "type": "integer",
           "description": "Number of parsing errors"
         },
-        "parse_time_ms": {
-          "type": "number",
-          "description": "Time taken to parse in milliseconds"
-        },
         "source_hash": {
           "type": "string",
           "description": "SHA256 hash of original source code"
