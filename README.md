@@ -25,8 +25,8 @@ MLCPD enables robust cross-language analysis, code understanding, and representa
 | Total Records | 7,021,722 |
 | Successful Conversions | 7,021,718 (99.9999%) |
 | Failed Conversions | 4 (3 in C, 1 in C++) |
-| Disk Size | ~105 GB (Parquet format) |
-| Memory Size | ~580 GB (Parquet format) |
+| Disk Size | ~114 GB (Parquet format) |
+| Memory Size | ~600 GB (Parquet format) |
 
 The dataset is clean, lossless, and statistically balanced across languages.  
 It offers both per-language and combined cross-language representations.
