@@ -716,6 +716,8 @@ def convert_parquet_row_to_json(row: pd.Series) -> Optional[Dict]:
                 "categorized_nodes": categorized_count
             },
             "ast": ast_structure,
+            "node_categories": node_categories,
+            "cross_language_map": cross_language_map,
             "original_source_code": code,
         }
         
@@ -828,7 +830,7 @@ def process_folder(input_folder: str, output_folder: str, max_rows_per_file: Opt
 
 def main():
     INPUT_FOLDER = "parsed_data_parquet"  
-    OUTPUT_FOLDER = Path.cwd() / "final_parquet_output"
+    OUTPUT_FOLDER = Path.cwd() / "mlcpd_parquet"
     MAX_ROWS_PER_FILE = None
 
     # Create output folder
